@@ -2,27 +2,25 @@
 <header class="nav" role="banner">
   <div class="nav-inner">
 
-    <!-- Logo + stacked text -->
+    <!-- Logo: image + text side by side -->
     <a href="/" class="nav-logo" aria-label="Klassrun Technologies — home">
       <img
         src="/assets/images/logo.webp"
         alt="Klassrun Technologies"
         class="nav-logo-img"
-        width="148" height="38"
+        width="34" height="34"
         loading="eager"
         fetchpriority="high"
       />
-
       <span class="nav-logo-text">
         <span class="nav-logo-wordmark">
-          <span class="logo-k">Klassrun</span><br>
-          <span class="logo-t">Technologies</span>
+          <span class="logo-k">Klassrun</span><span class="logo-t"> Technologies</span>
         </span>
         <span class="nav-logo-sub">Ltd · RC 9463863 · Lagos</span>
       </span>
     </a>
 
-    <!-- Desktop navigation -->
+    <!-- Desktop navigation links (hidden on mobile via CSS) -->
     <nav class="nav-links" aria-label="Main navigation">
       <ul role="list">
         <li><a href="#about">About</a></li>
@@ -33,14 +31,17 @@
       </ul>
     </nav>
 
-    <!-- CTA + hamburger -->
+    <!-- Right side: desktop CTA buttons + hamburger -->
     <div class="nav-cta">
-      <a href="mailto:klassrun@gmail.com" class="btn btn-ghost">Contact us</a>
-      <a href="#products" class="btn btn-primary">Our products &rarr;</a>
+      <!-- These two are ONLY visible on desktop (768px+) -->
+      <a href="mailto:klassrun@gmail.com" class="nav-btn-ghost">Contact us</a>
+      <a href="#products" class="nav-btn-primary">Our products &rarr;</a>
+
+      <!-- Hamburger: ONLY visible on mobile -->
       <button
         class="hamburger"
         id="hamburger"
-        aria-label="Toggle navigation"
+        aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="mobileMenu"
       >
@@ -51,16 +52,16 @@
   </div>
 </header>
 
-<!-- Mobile navigation drawer -->
+<!-- Mobile drawer: slides in from right, contains ALL nav + CTAs -->
 <div
   class="mobile-menu"
   id="mobileMenu"
   role="dialog"
-  aria-label="Mobile navigation"
+  aria-label="Navigation menu"
   aria-modal="true"
   hidden
 >
-  <nav aria-label="Mobile menu">
+  <nav aria-label="Mobile navigation">
     <ul role="list">
       <li><a href="#about"    class="mobile-link">About</a></li>
       <li><a href="#products" class="mobile-link">Products</a></li>
@@ -69,8 +70,10 @@
       <li><a href="#contact"  class="mobile-link">Contact</a></li>
     </ul>
   </nav>
+
+  <!-- CTA buttons live inside the drawer on mobile -->
   <div class="mobile-cta">
-    <a href="mailto:klassrun@gmail.com" class="btn btn-ghost">Contact us</a>
-    <a href="#products" class="btn btn-primary">Our products &rarr;</a>
+    <a href="mailto:klassrun@gmail.com" class="mobile-btn-ghost">Contact us</a>
+    <a href="#products" class="mobile-btn-primary">Our products &rarr;</a>
   </div>
 </div>
