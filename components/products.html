@@ -1,0 +1,72 @@
+<!-- products — <section> with role="list" on product grid -->
+<section class="section products-bg" id="products" aria-labelledby="products-heading">
+  <div class="container">
+
+    <header class="section-header reveal">
+      <p class="sec-label" aria-hidden="true">Our products</p>
+      <h2 id="products-heading" class="sec-title d">Software we're building for schools</h2>
+      <p class="sec-sub">
+        Each product solves a specific, real problem for Nigerian schools.
+        KlassRun is our flagship — more are actively in development.
+      </p>
+    </header>
+
+    <ul class="products-grid" role="list">
+
+      <!-- KlassRun — FLAGSHIP -->
+      <li class="product-card flagship reveal">
+        <span class="product-status status-live" aria-label="Status: Flagship product">&#9679; Flagship product</span>
+        <div class="product-icon" aria-hidden="true">📖</div>
+        <h3>KlassRun</h3>
+        <p>
+          AI-powered lesson note and exam question generator for Nigerian primary and secondary schools.
+          Automatically aligned with NERDC curriculum and WAEC/NECO standards. Saves teachers 12+ hours per week.
+        </p>
+        <ul class="product-tags" aria-label="Features">
+          <li class="product-tag">Lesson notes</li>
+          <li class="product-tag">Exam questions</li>
+          <li class="product-tag">WAEC aligned</li>
+          <li class="product-tag">PWA + offline</li>
+          <li class="product-tag">School OS</li>
+        </ul>
+        <!-- UPDATE href when KlassRun is live -->
+        <a href="#" class="product-link">Visit KlassRun &rarr;</a>
+      </li>
+
+      <!-- SchoolMetrics — IN DEV -->
+      <li class="product-card reveal">
+        <span class="product-status status-dev" aria-label="Status: In development">&#9679; In development</span>
+        <div class="product-icon" aria-hidden="true">📊</div>
+        <h3>SchoolMetrics</h3>
+        <p>
+          A data analytics dashboard for school proprietors and administrators — tracking student
+          performance, teacher activity, and school efficiency across all classes and terms in one place.
+        </p>
+        <ul class="product-tags" aria-label="Features">
+          <li class="product-tag">Analytics</li>
+          <li class="product-tag">Performance data</li>
+          <li class="product-tag">School insights</li>
+        </ul>
+        <a href="#" class="product-link" aria-disabled="true" style="opacity:.45;pointer-events:none">Coming soon &rarr;</a>
+      </li>
+
+      <!-- ParentConnect — PLANNED -->
+      <li class="product-card reveal">
+        <span class="product-status status-soon" aria-label="Status: Planned">Planned</span>
+        <div class="product-icon" aria-hidden="true">👨‍👩‍👧</div>
+        <h3>ParentConnect</h3>
+        <p>
+          A parent-facing portal where parents can view their child's attendance, assessment scores,
+          teacher comments, and term reports in real time — directly from the school's KlassRun platform.
+        </p>
+        <ul class="product-tags" aria-label="Features">
+          <li class="product-tag">Parent portal</li>
+          <li class="product-tag">Real-time updates</li>
+          <li class="product-tag">Report cards</li>
+        </ul>
+        <a href="#" class="product-link" aria-disabled="true" style="opacity:.45;pointer-events:none">Coming soon &rarr;</a>
+      </li>
+
+    </ul>
+  </div>
+</section>

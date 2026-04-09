@@ -1,0 +1,38 @@
+/* ─────────────────────────────────────────────────
+   cred-strip.css — Dark credentials bar
+───────────────────────────────────────────────── */
+
+.cred-strip {
+  background: var(--charcoal);
+  padding: 1.1rem var(--padding-x);
+}
+
+.cred-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cred-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+}
+.cred-item strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cred-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green);
+  opacity: 0.7;
+}

@@ -1,0 +1,22 @@
+/* responsive.css — additive tablet/desktop overrides only */
+
+/* Tablet 768px+ */
+@media (min-width: 768px) {
+  .about-grid     { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  .products-grid  { grid-template-columns: repeat(2, 1fr); }
+  .services-grid  { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid     { grid-template-columns: repeat(2, 1fr); }
+  .team-grid      { grid-template-columns: repeat(2, 1fr); max-width: none; margin-left: 0; margin-right: 0; }
+  .footer-grid    { grid-template-columns: 1fr 1fr; }
+  .stat-grid      { grid-template-columns: 1fr 1fr; }
+}
+
+/* Desktop 1024px+ */
+@media (min-width: 1024px) {
+  .products-grid  { grid-template-columns: repeat(3, 1fr); }
+  .services-grid  { grid-template-columns: repeat(3, 1fr); }
+  .steps-grid     { grid-template-columns: repeat(4, 1fr); }
+  .team-grid      { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid    { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .about-grid     { gap: 5rem; }
+}

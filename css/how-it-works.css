@@ -1,0 +1,39 @@
+/* ─────────────────────────────────────────────────
+   how-it-works.css — Dark background steps section
+───────────────────────────────────────────────── */
+
+.how-bg { background: var(--charcoal); }
+
+.how-bg .sec-label { color: rgba(61, 181, 74, 0.9); }
+.how-bg .sec-title { color: #fff; }
+.how-bg .sec-sub   { color: rgba(255, 255, 255, 0.5); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: rgba(61, 181, 74, 0.18);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.step h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.975rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.855rem;
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.7;
+}

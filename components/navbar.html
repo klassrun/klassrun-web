@@ -1,0 +1,74 @@
+<!-- navbar — semantic <header> with accessible nav -->
+<header class="nav" role="banner">
+  <div class="nav-inner">
+
+    <!-- Logo: uncomment <img> once logo.webp is in assets/images/ -->
+    <a href="/" class="nav-logo" aria-label="Klassrun Technologies — home">
+      <!--
+      <img
+        src="/assets/images/logo.webp"
+        alt="Klassrun Technologies"
+        class="nav-logo-img"
+        width="148" height="38"
+        loading="eager"
+        fetchpriority="high"
+      />
+      -->
+      <span class="nav-logo-wordmark" aria-hidden="true">
+        <span class="logo-k">Klassrun</span><span class="logo-t">&nbsp;Technologies</span>
+      </span>
+      <span class="nav-logo-sub">Ltd · RC 9463863 · Lagos</span>
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <ul role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA + hamburger -->
+    <div class="nav-cta">
+      <a href="mailto:klassrun@gmail.com" class="btn btn-ghost">Contact us</a>
+      <a href="#products" class="btn btn-primary">Our products &rarr;</a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- Mobile navigation drawer -->
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+  role="dialog"
+  aria-label="Mobile navigation"
+  aria-modal="true"
+  hidden
+>
+  <nav aria-label="Mobile menu">
+    <ul role="list">
+      <li><a href="#about"    class="mobile-link">About</a></li>
+      <li><a href="#products" class="mobile-link">Products</a></li>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#team"     class="mobile-link">Team</a></li>
+      <li><a href="#contact"  class="mobile-link">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="mobile-cta">
+    <a href="mailto:klassrun@gmail.com" class="btn btn-ghost">Contact us</a>
+    <a href="#products" class="btn btn-primary">Our products &rarr;</a>
+  </div>
+</div>

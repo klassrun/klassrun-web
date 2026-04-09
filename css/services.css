@@ -1,0 +1,40 @@
+/* ─────────────────────────────────────────────────
+   services.css — Services grid cards
+───────────────────────────────────────────────── */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.svc-card {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  transition: var(--transition);
+  background: var(--white);
+}
+.svc-card:hover {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+
+.svc-icon {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.svc-card h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.svc-card p {
+  font-size: 0.855rem;
+  color: var(--muted);
+  line-height: 1.65;
+}

@@ -1,0 +1,98 @@
+/* base.css — body, typography, layout utilities */
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+.section    { padding: 4.5rem 0; }
+.section-sm { padding: 3rem 0; }
+
+.d     { font-family: var(--font-display); }
+.green { color: var(--green); }
+
+/* Section header */
+.section-header { text-align: center; margin-bottom: 3rem; }
+
+.sec-label {
+  display: inline-block;
+  color: var(--green);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.sec-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.55rem, 3.5vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+  margin-bottom: 0.75rem;
+}
+
+.sec-sub {
+  font-size: 0.975rem;
+  color: var(--muted);
+  max-width: 52ch;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Shared pill row */
+.pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.pill {
+  background: var(--green-light);
+  color: var(--green-dark);
+  border: 1px solid var(--green-mid);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.28rem 0.75rem;
+  border-radius: 99px;
+}
+
+/* Shared buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-ghost {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-soft);
+  background: transparent;
+  color: var(--charcoal);
+  font-size: 0.875rem;
+}
+.btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+.btn-primary {
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  background: var(--green);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
