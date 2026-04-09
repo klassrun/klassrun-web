@@ -1,27 +1,13 @@
-/* ─────────────────────────────────────────────────────────────
-   navbar.css — mobile-first
-
-   Mobile  (<768px): logo + hamburger ONLY in the bar
-   Desktop (≥768px): logo + nav links + CTA buttons, no hamburger
-
-   Key decision: desktop CTA buttons use .nav-cta-ghost /
-   .nav-cta-primary and mobile drawer buttons use
-   .mobile-cta-ghost / .mobile-cta-primary.
-   These are NEVER shared with base.css .btn so there is
-   zero specificity conflict.
-───────────────────────────────────────────────────────────── */
-
-/* ── Bar ─────────────────────────────────────────────────── */
+/* navbar.css — mobile-first */
 .nav {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(255,255,255,0.97);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
-
 .nav-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -31,18 +17,15 @@
   justify-content: space-between;
   height: 60px;
 }
-
-/* ── Logo ─────────────────────────────────────────────────── */
 .nav-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   text-decoration: none;
   flex-shrink: 0;
   min-width: 0;
 }
-
 .nav-logo-img {
   height: 34px;
   width: 34px;
@@ -50,14 +33,12 @@
   display: block;
   flex-shrink: 0;
 }
-
 .nav-logo-text {
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-width: 0;
 }
-
 .nav-logo-wordmark {
   font-family: var(--font-display);
   font-weight: 800;
@@ -68,7 +49,6 @@
 }
 .logo-k { color: var(--charcoal); }
 .logo-t { color: var(--green); }
-
 .nav-logo-sub {
   font-family: var(--font-body);
   font-size: 0.5rem;
@@ -80,11 +60,8 @@
   white-space: nowrap;
 }
 
-/* ── Desktop nav links — HIDDEN on mobile ─────────────────── */
-.nav-links {
-  display: none;
-}
-
+/* Desktop links — hidden mobile */
+.nav-links { display: none; }
 .nav-links ul {
   display: flex;
   align-items: center;
@@ -92,7 +69,6 @@
   margin: 0;
   padding: 0;
 }
-
 .nav-links a {
   font-family: var(--font-body);
   font-size: 0.875rem;
@@ -106,23 +82,14 @@
   transition: var(--transition);
 }
 .nav-links a:hover,
-.nav-links a[aria-current="page"] {
-  color: var(--charcoal);
-  background: var(--off-white);
-}
+.nav-links a[aria-current="page"] { color: var(--charcoal); background: var(--off-white); }
 
-/* ── Right cluster ────────────────────────────────────────── */
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
+.nav-cta { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
 
-/* Desktop CTA buttons — HIDDEN on mobile */
+/* Desktop CTA — hidden mobile */
 .nav-cta-ghost,
 .nav-cta-primary {
-  display: none;  /* ← mobile default: invisible */
+  display: none;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
@@ -133,7 +100,6 @@
   transition: var(--transition);
   cursor: pointer;
 }
-
 .nav-cta-ghost {
   padding: 0.48rem 0.95rem;
   border: 1.5px solid var(--border-soft);
@@ -141,11 +107,7 @@
   color: var(--charcoal);
   font-size: 0.85rem;
 }
-.nav-cta-ghost:hover {
-  border-color: var(--green);
-  color: var(--green);
-}
-
+.nav-cta-ghost:hover { border-color: var(--green); color: var(--green); }
 .nav-cta-primary {
   padding: 0.5rem 1rem;
   background: var(--green);
@@ -154,14 +116,11 @@
   font-weight: 600;
   border: none;
 }
-.nav-cta-primary:hover {
-  background: var(--green-dark);
-  transform: translateY(-1px);
-}
+.nav-cta-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
 
-/* ── Hamburger — HIDDEN on desktop ───────────────────────── */
+/* Hamburger — visible mobile only */
 .hamburger {
-  display: flex;          /* visible on mobile */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -176,29 +135,24 @@
   transition: background 0.18s;
 }
 .hamburger:hover { background: var(--off-white); }
-
 .hamburger span {
   display: block;
   width: 20px;
   height: 2px;
   background: var(--charcoal);
   border-radius: 2px;
-  transition:
-    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity   0.22s ease;
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1), opacity 0.22s ease;
   transform-origin: center;
 }
 .hamburger.open span:nth-child(1) { transform: translateY(7px)  rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Mobile drawer ────────────────────────────────────────── */
+/* Mobile drawer */
 .mobile-menu {
   position: fixed;
-  top: 60px;      /* exact nav height */
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 60px;
+  left: 0; right: 0; bottom: 0;
   background: var(--white);
   z-index: 998;
   padding: 0.5rem 1.25rem 3rem;
@@ -206,22 +160,11 @@
   flex-direction: column;
   border-top: 1px solid var(--border-soft);
   overflow-y: auto;
-  /* start off-screen */
   transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
 }
-
-/* removing [hidden] slides it in */
-.mobile-menu:not([hidden]) {
-  transform: translateX(0);
-}
-
-.mobile-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
+.mobile-menu:not([hidden]) { transform: translateX(0); }
+.mobile-menu ul { list-style: none; margin: 0; padding: 0; }
 .mobile-link {
   display: flex;
   align-items: center;
@@ -234,19 +177,8 @@
   text-decoration: none;
   transition: color 0.18s, padding-left 0.2s;
 }
-.mobile-link:hover {
-  color: var(--green);
-  padding-left: 0.4rem;
-}
-
-/* CTA buttons inside the drawer — fully styled, no inheritance needed */
-.mobile-cta {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
+.mobile-link:hover { color: var(--green); padding-left: 0.4rem; }
+.mobile-cta { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
 .mobile-cta-ghost,
 .mobile-cta-primary {
   display: flex;
@@ -257,61 +189,38 @@
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 500;
   text-decoration: none;
   text-align: center;
   transition: var(--transition);
   cursor: pointer;
   box-sizing: border-box;
 }
-
-/* Ghost = outlined */
 .mobile-cta-ghost {
-  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border: 1.5px solid rgba(0,0,0,0.15);
   background: transparent;
   color: var(--charcoal);
+  font-weight: 500;
 }
-.mobile-cta-ghost:hover {
-  border-color: var(--green);
-  color: var(--green);
-}
-
-/* Primary = solid green */
+.mobile-cta-ghost:hover { border-color: var(--green); color: var(--green); }
 .mobile-cta-primary {
   border: none;
   background: var(--green);
   color: #ffffff;
   font-weight: 600;
 }
-.mobile-cta-primary:hover {
-  background: var(--green-dark);
-}
+.mobile-cta-primary:hover { background: var(--green-dark); }
 
-/* ── Tablet 768px+ ────────────────────────────────────────── */
 @media (min-width: 768px) {
-  .nav-inner   { padding: 0 var(--px); height: 64px; }
-
-  /* show desktop nav */
-  .nav-links   { display: flex; }
-
-  /* show desktop CTA buttons */
+  .nav-inner           { padding: 0 var(--px); height: 64px; }
+  .nav-links           { display: flex; }
   .nav-cta-ghost,
-  .nav-cta-primary { display: inline-flex; }
-
-  /* hide hamburger */
-  .hamburger   { display: none; }
-
-  /* kill mobile drawer entirely */
-  .mobile-menu { display: none !important; }
-
-  /* bigger logo text on desktop */
-  .nav-logo-img      { height: 38px; width: 38px; }
-  .nav-logo-wordmark { font-size: 1.1rem; }
-  .nav-logo-sub      { font-size: 0.54rem; }
+  .nav-cta-primary     { display: inline-flex; }
+  .hamburger           { display: none; }
+  .mobile-menu         { display: none !important; }
+  .nav-logo-img        { height: 38px; width: 38px; }
+  .nav-logo-wordmark   { font-size: 1.1rem; }
 }
-
-/* ── Desktop 1024px+ ──────────────────────────────────────── */
 @media (min-width: 1024px) {
   .nav-logo-wordmark { font-size: 1.15rem; }
-  .nav-links a       { font-size: 0.9rem; padding: 0.45rem 0.85rem; }
+  .nav-links a { font-size: 0.9rem; padding: 0.45rem 0.85rem; }
 }

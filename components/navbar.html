@@ -1,17 +1,8 @@
-<!-- navbar — semantic <header> with accessible nav -->
 <header class="nav" role="banner">
   <div class="nav-inner">
-
-    <!-- Logo: image + stacked text -->
     <a href="/" class="nav-logo" aria-label="Klassrun Technologies — home">
-      <img
-        src="/assets/images/logo.webp"
-        alt="Klassrun Technologies"
-        class="nav-logo-img"
-        width="34" height="34"
-        loading="eager"
-        fetchpriority="high"
-      />
+      <img src="/assets/images/logo.webp" alt="Klassrun Technologies"
+        class="nav-logo-img" width="34" height="34" loading="eager" fetchpriority="high"/>
       <span class="nav-logo-text">
         <span class="nav-logo-wordmark">
           <span class="logo-k">Klassrun</span><span class="logo-t"> Technologies</span>
@@ -20,7 +11,6 @@
       </span>
     </a>
 
-    <!-- Desktop nav links — CSS hides on mobile -->
     <nav class="nav-links" aria-label="Main navigation">
       <ul role="list">
         <li><a href="#about">About</a></li>
@@ -31,35 +21,19 @@
       </ul>
     </nav>
 
-    <!-- Right cluster -->
     <div class="nav-cta">
-      <!-- Desktop buttons — CSS hides on mobile -->
       <a href="mailto:klassrun@gmail.com" class="nav-cta-ghost">Contact us</a>
       <a href="#products" class="nav-cta-primary">Our products &rarr;</a>
-      <!-- Hamburger — CSS hides on desktop -->
-      <button
-        class="hamburger"
-        id="hamburger"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-      >
+      <button class="hamburger" id="hamburger"
+        aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
-
   </div>
 </header>
 
-<!-- Mobile full-screen drawer -->
-<div
-  class="mobile-menu"
-  id="mobileMenu"
-  role="dialog"
-  aria-label="Navigation menu"
-  aria-modal="true"
-  hidden
->
+<div class="mobile-menu" id="mobileMenu"
+  role="dialog" aria-label="Navigation menu" aria-modal="true" hidden>
   <nav aria-label="Mobile navigation">
     <ul role="list">
       <li><a href="#about"    class="mobile-link">About</a></li>

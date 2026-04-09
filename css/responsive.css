@@ -1,22 +1,16 @@
-/* responsive.css — additive tablet/desktop overrides only */
+/* responsive.css — only overrides not already in component CSS */
+/* products, services, team, steps all handle their own breakpoints */
+/* This file handles about-grid and footer-grid at tablet+ */
 
-/* Tablet 768px+ */
 @media (min-width: 768px) {
-  .about-grid     { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
-  .products-grid  { grid-template-columns: repeat(2, 1fr); }
-  .services-grid  { grid-template-columns: repeat(2, 1fr); }
-  .steps-grid     { grid-template-columns: repeat(2, 1fr); }
-  .team-grid      { grid-template-columns: repeat(2, 1fr); max-width: none; margin-left: 0; margin-right: 0; }
-  .footer-grid    { grid-template-columns: 1fr 1fr; }
-  .stat-grid      { grid-template-columns: 1fr 1fr; }
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .stat-num { font-size: 2rem; }
 }
-
-/* Desktop 1024px+ */
 @media (min-width: 1024px) {
-  .products-grid  { grid-template-columns: repeat(3, 1fr); }
-  .services-grid  { grid-template-columns: repeat(3, 1fr); }
-  .steps-grid     { grid-template-columns: repeat(4, 1fr); }
-  .team-grid      { grid-template-columns: repeat(3, 1fr); }
-  .footer-grid    { grid-template-columns: 2fr 1fr 1fr 1fr; }
-  .about-grid     { gap: 5rem; }
+  .about-grid { gap: 5rem; }
+  .stat-num   { font-size: 2.2rem; }
 }
