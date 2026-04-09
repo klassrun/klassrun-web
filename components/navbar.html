@@ -2,7 +2,7 @@
 <header class="nav" role="banner">
   <div class="nav-inner">
 
-    <!-- Logo: image + text side by side -->
+    <!-- Logo: image + stacked text -->
     <a href="/" class="nav-logo" aria-label="Klassrun Technologies — home">
       <img
         src="/assets/images/logo.webp"
@@ -20,7 +20,7 @@
       </span>
     </a>
 
-    <!-- Desktop navigation links (hidden on mobile via CSS) -->
+    <!-- Desktop nav links — CSS hides on mobile -->
     <nav class="nav-links" aria-label="Main navigation">
       <ul role="list">
         <li><a href="#about">About</a></li>
@@ -31,13 +31,12 @@
       </ul>
     </nav>
 
-    <!-- Right side: desktop CTA buttons + hamburger -->
+    <!-- Right cluster -->
     <div class="nav-cta">
-      <!-- These two are ONLY visible on desktop (768px+) -->
-      <a href="mailto:klassrun@gmail.com" class="nav-btn-ghost">Contact us</a>
-      <a href="#products" class="nav-btn-primary">Our products &rarr;</a>
-
-      <!-- Hamburger: ONLY visible on mobile -->
+      <!-- Desktop buttons — CSS hides on mobile -->
+      <a href="mailto:klassrun@gmail.com" class="nav-cta-ghost">Contact us</a>
+      <a href="#products" class="nav-cta-primary">Our products &rarr;</a>
+      <!-- Hamburger — CSS hides on desktop -->
       <button
         class="hamburger"
         id="hamburger"
@@ -52,7 +51,7 @@
   </div>
 </header>
 
-<!-- Mobile drawer: slides in from right, contains ALL nav + CTAs -->
+<!-- Mobile full-screen drawer -->
 <div
   class="mobile-menu"
   id="mobileMenu"
@@ -70,10 +69,8 @@
       <li><a href="#contact"  class="mobile-link">Contact</a></li>
     </ul>
   </nav>
-
-  <!-- CTA buttons live inside the drawer on mobile -->
   <div class="mobile-cta">
-    <a href="mailto:klassrun@gmail.com" class="mobile-btn-ghost">Contact us</a>
-    <a href="#products" class="mobile-btn-primary">Our products &rarr;</a>
+    <a href="mailto:klassrun@gmail.com" class="mobile-cta-ghost">Contact us</a>
+    <a href="#products" class="mobile-cta-primary">Our products &rarr;</a>
   </div>
 </div>

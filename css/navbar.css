@@ -1,10 +1,17 @@
-/* ─────────────────────────────────────────────────
+/* ─────────────────────────────────────────────────────────────
    navbar.css — mobile-first
-   Mobile:  logo + hamburger only
-   768px+:  logo + nav links + CTA buttons, no hamburger
-───────────────────────────────────────────────── */
 
-/* ── Sticky bar ── */
+   Mobile  (<768px): logo + hamburger ONLY in the bar
+   Desktop (≥768px): logo + nav links + CTA buttons, no hamburger
+
+   Key decision: desktop CTA buttons use .nav-cta-ghost /
+   .nav-cta-primary and mobile drawer buttons use
+   .mobile-cta-ghost / .mobile-cta-primary.
+   These are NEVER shared with base.css .btn so there is
+   zero specificity conflict.
+───────────────────────────────────────────────────────────── */
+
+/* ── Bar ─────────────────────────────────────────────────── */
 .nav {
   position: sticky;
   top: 0;
@@ -23,18 +30,16 @@
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  /* No gap — space-between handles spacing */
 }
 
-/* ── Logo ── */
+/* ── Logo ─────────────────────────────────────────────────── */
 .nav-logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.6rem;
   text-decoration: none;
   flex-shrink: 0;
-  /* Prevent logo from pushing other items */
   min-width: 0;
 }
 
@@ -49,10 +54,8 @@
 .nav-logo-text {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  /* Allow text to shrink if needed */
+  gap: 2px;
   min-width: 0;
-  overflow: hidden;
 }
 
 .nav-logo-wordmark {
@@ -62,10 +65,7 @@
   letter-spacing: -0.3px;
   line-height: 1;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-
 .logo-k { color: var(--charcoal); }
 .logo-t { color: var(--green); }
 
@@ -80,7 +80,7 @@
   white-space: nowrap;
 }
 
-/* ── Desktop nav links — HIDDEN on mobile ── */
+/* ── Desktop nav links — HIDDEN on mobile ─────────────────── */
 .nav-links {
   display: none;
 }
@@ -98,7 +98,7 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--muted);
-  padding: 0.4rem 0.72rem;
+  padding: 0.4rem 0.75rem;
   border-radius: var(--radius-sm);
   text-decoration: none;
   white-space: nowrap;
@@ -111,7 +111,7 @@
   background: var(--off-white);
 }
 
-/* ── Right-side CTA cluster ── */
+/* ── Right cluster ────────────────────────────────────────── */
 .nav-cta {
   display: flex;
   align-items: center;
@@ -119,51 +119,49 @@
   flex-shrink: 0;
 }
 
-/* ── Desktop CTA buttons — HIDDEN on mobile ── */
-/* Using nav-specific class names to avoid conflicts with base.css .btn */
-.nav-btn-ghost,
-.nav-btn-primary {
-  display: none; /* hidden by default (mobile) */
+/* Desktop CTA buttons — HIDDEN on mobile */
+.nav-cta-ghost,
+.nav-cta-primary {
+  display: none;  /* ← mobile default: invisible */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.nav-btn-ghost {
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
+.nav-cta-ghost {
+  padding: 0.48rem 0.95rem;
   border: 1.5px solid var(--border-soft);
   background: transparent;
   color: var(--charcoal);
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: var(--transition);
+  font-size: 0.85rem;
 }
-.nav-btn-ghost:hover {
+.nav-cta-ghost:hover {
   border-color: var(--green);
   color: var(--green);
 }
 
-.nav-btn-primary {
-  padding: 0.52rem 1.1rem;
-  border-radius: var(--radius-sm);
+.nav-cta-primary {
+  padding: 0.5rem 1rem;
   background: var(--green);
   color: #fff;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: var(--transition);
+  border: none;
 }
-.nav-btn-primary:hover {
+.nav-cta-primary:hover {
   background: var(--green-dark);
   transform: translateY(-1px);
 }
 
-/* ── Hamburger — VISIBLE on mobile only ── */
+/* ── Hamburger — HIDDEN on desktop ───────────────────────── */
 .hamburger {
-  display: flex;
+  display: flex;          /* visible on mobile */
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -187,20 +185,17 @@
   border-radius: 2px;
   transition:
     transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.22s ease;
+    opacity   0.22s ease;
   transform-origin: center;
 }
-
-/* Animated X when open */
-.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(1) { transform: translateY(7px)  rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── Mobile drawer ── */
+/* ── Mobile drawer ────────────────────────────────────────── */
 .mobile-menu {
   position: fixed;
-  /* top matches nav height exactly */
-  top: 60px;
+  top: 60px;      /* exact nav height */
   left: 0;
   right: 0;
   bottom: 0;
@@ -211,12 +206,12 @@
   flex-direction: column;
   border-top: 1px solid var(--border-soft);
   overflow-y: auto;
-  /* Start off-screen to the right */
+  /* start off-screen */
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Removing [hidden] triggers slide-in */
+/* removing [hidden] slides it in */
 .mobile-menu:not([hidden]) {
   transform: translateX(0);
 }
@@ -237,14 +232,14 @@
   padding: 1rem 0;
   border-bottom: 1px solid var(--border-soft);
   text-decoration: none;
-  transition: color 0.18s, padding-left 0.18s;
+  transition: color 0.18s, padding-left 0.2s;
 }
 .mobile-link:hover {
   color: var(--green);
   padding-left: 0.4rem;
 }
 
-/* CTA buttons inside the drawer */
+/* CTA buttons inside the drawer — fully styled, no inheritance needed */
 .mobile-cta {
   margin-top: 2rem;
   display: flex;
@@ -252,8 +247,8 @@
   gap: 0.75rem;
 }
 
-.mobile-btn-ghost,
-.mobile-btn-primary {
+.mobile-cta-ghost,
+.mobile-cta-primary {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -267,59 +262,55 @@
   text-align: center;
   transition: var(--transition);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
-.mobile-btn-ghost {
-  border: 1.5px solid var(--border-soft);
+/* Ghost = outlined */
+.mobile-cta-ghost {
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
   background: transparent;
   color: var(--charcoal);
-  font-weight: 500;
 }
-.mobile-btn-ghost:hover {
+.mobile-cta-ghost:hover {
   border-color: var(--green);
   color: var(--green);
 }
 
-.mobile-btn-primary {
-  background: var(--green);
-  color: #fff;
-  font-weight: 600;
+/* Primary = solid green */
+.mobile-cta-primary {
   border: none;
+  background: var(--green);
+  color: #ffffff;
+  font-weight: 600;
 }
-.mobile-btn-primary:hover {
+.mobile-cta-primary:hover {
   background: var(--green-dark);
 }
 
-/* ─────────────────────────────────────────────────
-   Tablet 768px+ — switch to full desktop layout
-───────────────────────────────────────────────── */
+/* ── Tablet 768px+ ────────────────────────────────────────── */
 @media (min-width: 768px) {
-  .nav-inner {
-    padding: 0 var(--px);
-    height: 64px;
-  }
+  .nav-inner   { padding: 0 var(--px); height: 64px; }
 
-  /* Show nav links */
-  .nav-links { display: flex; }
+  /* show desktop nav */
+  .nav-links   { display: flex; }
 
-  /* Show desktop CTA buttons */
-  .nav-btn-ghost,
-  .nav-btn-primary { display: inline-flex; }
+  /* show desktop CTA buttons */
+  .nav-cta-ghost,
+  .nav-cta-primary { display: inline-flex; }
 
-  /* Hide hamburger */
-  .hamburger { display: none; }
+  /* hide hamburger */
+  .hamburger   { display: none; }
 
-  /* Kill mobile drawer completely */
+  /* kill mobile drawer entirely */
   .mobile-menu { display: none !important; }
 
-  /* Slightly bigger logo on desktop */
-  .nav-logo-img     { height: 38px; width: 38px; }
-  .nav-logo-wordmark{ font-size: 1.1rem; }
+  /* bigger logo text on desktop */
+  .nav-logo-img      { height: 38px; width: 38px; }
+  .nav-logo-wordmark { font-size: 1.1rem; }
+  .nav-logo-sub      { font-size: 0.54rem; }
 }
 
-/* ─────────────────────────────────────────────────
-   Desktop 1024px+
-───────────────────────────────────────────────── */
+/* ── Desktop 1024px+ ──────────────────────────────────────── */
 @media (min-width: 1024px) {
   .nav-logo-wordmark { font-size: 1.15rem; }
   .nav-links a       { font-size: 0.9rem; padding: 0.45rem 0.85rem; }
