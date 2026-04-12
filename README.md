@@ -1,104 +1,36 @@
-# Klassrun Technologies — Web Project
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Project structure
+## Getting Started
 
-```
-klassrun-web/
-├── index.html              ← entry point
-├── vercel.json             ← Vercel cache + routing config
-├── .gitignore
-│
-├── css/                    ← one file per concern
-│   ├── tokens.css          ← CSS variables (edit here first)
-│   ├── reset.css
-│   ├── base.css            ← body, utilities, shared buttons
-│   ├── animations.css
-│   ├── navbar.css
-│   ├── hero.css
-│   ├── cred-strip.css
-│   ├── about.css
-│   ├── products.css
-│   ├── services.css
-│   ├── how-it-works.css
-│   ├── team.css
-│   ├── cta.css
-│   ├── footer.css
-│   └── responsive.css      ← all breakpoints in one place
-│
-├── js/
-│   ├── loader.js           ← fetches + injects HTML components
-│   ├── navbar.js           ← hamburger, scroll highlight
-│   └── scroll-reveal.js    ← IntersectionObserver animations
-│
-├── components/             ← each section as its own HTML partial
-│   ├── navbar.html
-│   ├── hero.html
-│   ├── cred-strip.html
-│   ├── about.html
-│   ├── products.html
-│   ├── services.html
-│   ├── how-it-works.html
-│   ├── team.html
-│   ├── cta.html
-│   └── footer.html
-│
-└── assets/
-    ├── images/
-    │   ├── logo.webp           ← main logo (light bg)
-    │   ├── logo-white.webp     ← white version for dark footer
-    │   └── og-image.webp       ← 1200×630 social share image
-    └── icons/
-        ├── favicon.webp        ← 32×32
-        └── apple-touch-icon.webp ← 180×180
-```
-
----
-
-## Images you need to add
-
-| File | Size | Used in |
-|------|------|---------|
-| `assets/images/logo.webp` | ~200px wide | Navbar |
-| `assets/images/logo-white.webp` | ~140px wide | Footer |
-| `assets/images/og-image.webp` | 1200×630 | Social sharing |
-| `assets/icons/favicon.webp` | 32×32 | Browser tab |
-| `assets/icons/apple-touch-icon.webp` | 180×180 | iPhone home screen |
-| `assets/images/team-adegbite.webp` | 72×72 | Team card (optional) |
-
-### Converting your logo to WebP (run once in project root)
-
-**macOS:**
-```bash
-brew install webp && find assets -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec sh -c 'cwebp -q 82 "$1" -o "${1%.*}.webp" && rm "$1"' _ {} \;
-```
-
-**Ubuntu / WSL:**
-```bash
-sudo apt install webp && find assets -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec sh -c 'cwebp -q 82 "$1" -o "${1%.*}.webp" && rm "$1"' _ {} \;
-```
-
----
-
-## Deploy to Vercel
+First, run the development server:
 
 ```bash
-# First time
-npx vercel
-
-# Subsequent deploys
-npx vercel --prod
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Or connect the GitHub repo in the Vercel dashboard — it auto-deploys on every push to `main`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Activating the logo in HTML
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Once `assets/images/logo.webp` exists, open `components/navbar.html` and uncomment the `<img>` block, then comment out the text fallback. Same pattern in `components/footer.html` for the white logo.
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-## Updating KlassRun links
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Search for the comment `<!-- UPDATE href -->` in `components/products.html`, `components/cta.html`, and `components/footer.html` — those are the three places to drop your live URL when KlassRun launches.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
