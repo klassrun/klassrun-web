@@ -14,7 +14,6 @@ export const viewport = {
 }
 
 export const metadata = {
-  // ── BASIC ──
   title: {
     default: 'Klassrun Technologies Ltd — AI-Powered EdTech for Nigerian Schools',
     template: '%s | Klassrun Technologies',
@@ -37,7 +36,6 @@ export const metadata = {
   creator: 'Klassrun Technologies Ltd',
   publisher: 'Klassrun Technologies Ltd',
 
-  // ── OPEN GRAPH (WhatsApp, Facebook, LinkedIn previews) ──
   openGraph: {
     type: 'website',
     locale: 'en_NG',
@@ -57,7 +55,6 @@ export const metadata = {
     ],
   },
 
-  // ── TWITTER / X ──
   twitter: {
     card: 'summary_large_image',
     title: 'Klassrun Technologies Ltd',
@@ -65,7 +62,6 @@ export const metadata = {
     images: [`${BASE_URL}/images/og-image.webp`],
   },
 
-  // ── FAVICON & ICONS ──
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -79,17 +75,10 @@ export const metadata = {
     ],
   },
 
-  // ── VERIFICATION (uncomment when ready) ──
-  // verification: {
-  //   google: 'your-google-search-console-verification-code',
-  // },
-
-  // ── CANONICAL ──
   alternates: {
     canonical: BASE_URL,
   },
 
-  // ── ROBOTS ──
   robots: {
     index: true,
     follow: true,
@@ -103,7 +92,6 @@ export const metadata = {
   },
 }
 
-// ── JSON-LD STRUCTURED DATA ──
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -116,11 +104,7 @@ const jsonLd = {
     '@type': 'Place',
     name: 'Nigeria',
   },
-  sameAs: [
-    // Add your social media URLs here when ready, e.g.:
-    // 'https://twitter.com/klassrun',
-    // 'https://www.linkedin.com/company/klassrun',
-  ],
+  sameAs: [],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',

@@ -1,69 +1,26 @@
+'use client'
+
 import Image from 'next/image'
 
 export default function OfflinePage() {
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        backgroundColor: '#ffffff',
-        color: '#1f2937',
-        padding: '2rem',
-        textAlign: 'center',
-      }}
-    >
+    <div className="min-h-screen flex flex-col items-center justify-center bg-white text-foreground px-6 text-center">
       <Image
         src="/images/logo.webp"
         alt="Klassrun"
         width={120}
         height={90}
-        style={{
-          width: '120px',
-          height: 'auto',
-          marginBottom: '1.5rem',
-          opacity: 0.6,
-        }}
+        className="max-w-[120px] w-auto h-auto mb-6 opacity-60"
       />
-      <h1
-        style={{
-          fontSize: '1.35rem',
-          fontWeight: 700,
-          marginBottom: '0.5rem',
-          color: '#1a2332',
-        }}
-      >
+      <h1 className="text-xl font-bold text-foreground mb-2">
         You&apos;re offline
       </h1>
-      <p
-        style={{
-          fontSize: '0.95rem',
-          color: '#6b7280',
-          maxWidth: '360px',
-          lineHeight: 1.6,
-          marginBottom: '2rem',
-        }}
-      >
+      <p className="text-sm text-muted-foreground max-w-[360px] leading-relaxed mb-8">
         Check your internet connection and try again.
       </p>
       <button
         onClick={() => window.location.reload()}
-        style={{
-          padding: '0.7rem 2.5rem',
-          backgroundColor: '#3DB54A',
-          color: '#ffffff',
-          border: 'none',
-          borderRadius: '8px',
-          fontSize: '0.95rem',
-          fontWeight: 600,
-          cursor: 'pointer',
-          transition: 'background-color 0.2s',
-        }}
-        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#35a041')}
-        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#3DB54A')}
+        className="px-8 py-3 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-klassrun-green-dark transition-colors"
       >
         Retry
       </button>
