@@ -132,7 +132,7 @@ export default function Hero() {
                 </div>
                 <div className="flex-1 mx-4">
                   <div className="bg-secondary rounded-md px-3 py-1.5 text-xs text-muted-foreground text-center">
-                    app.klassrun.com
+                   klassrun.com
                   </div>
                 </div>
               </div>

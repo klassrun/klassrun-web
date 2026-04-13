@@ -23,20 +23,20 @@ export default function CTA() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="mailto:klassrun@gmail.com"
+                href="mailto:info@klassrun.com"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 hover:bg-klassrun-green-dark transition-all"
               >
                 Start Free Trial
                 <ArrowRight size={18} />
               </a>
-              <a
+              {/* <a
                 href="https://wa.me/2348000000000"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
               >
                 Chat on WhatsApp
-              </a>
+              </a> */}
             </div>
 
             <p className="mt-6 text-sm text-white/50">

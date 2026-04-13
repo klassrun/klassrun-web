@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
+  const EMAIL_ADDRESS = 'info@klassrun.com'
   return (
     <footer className="border-t border-border bg-foreground">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -52,22 +53,22 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:klassrun@gmail.com"
+                  href={`mailto:${EMAIL_ADDRESS}`}
                   className="flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors"
                 >
                   <Mail size={14} />
-                  klassrun@gmail.com
+                  {EMAIL_ADDRESS}
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="tel:+2348000000000"
                   className="flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors"
                 >
                   <Phone size={14} />
                   +234 800 000 0000
-                </a>
-              </li>
+                </a> 
+              </li> */}
               <li>
                 <span className="flex items-center gap-2 text-sm text-white/60">
                   <MapPin size={14} />
