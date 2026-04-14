@@ -70,7 +70,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
-                href="#pricing"
+                href="https://app.klassrun.com/signup"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 hover:bg-klassrun-green-dark transition-all hover:shadow-xl hover:shadow-primary/30"
               >
                 Start Free Trial

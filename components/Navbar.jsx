@@ -54,7 +54,7 @@ export default function Navbar() {
               Contact
             </a>
             <a
-              href="#pricing"
+              href="https://app.klassrun.com/signup"
               className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-klassrun-green-dark transition-colors"
             >
               Get Started
@@ -94,7 +94,7 @@ export default function Navbar() {
               Contact
             </a>
             <a
-              href="#pricing"
+              href="https://app.klassrun.com/signup"
               onClick={() => setMobileOpen(false)}
               className="block w-full text-center rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground mt-2"
             >
