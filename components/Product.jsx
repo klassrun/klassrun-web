@@ -9,54 +9,42 @@ import {
   CalendarDays,
 } from 'lucide-react'
 
-const features = [
+const outcomes = [
   {
     icon: FileText,
-    title: 'AI Lesson Notes',
+    title: 'Lesson Notes on Autopilot',
     description:
-      'Generate structured, curriculum-aligned lesson notes per subject and class. Complete with learning objectives, activities, and evaluation.',
+      'Complete, curriculum-aligned notes generated in under 60 seconds. Your teachers just pick the subject, class, and topic — KlassRun handles the rest.',
   },
   {
     icon: ClipboardCheck,
-    title: 'Exam Question Generator',
+    title: 'Fresh Exams Every Term',
     description:
-      'Build full assessments from the active term syllabus. Objective, theory, and practical questions — all fresh, never recycled.',
+      'AI tracks every question ever generated for your school and never duplicates. Students can\'t recycle answers. Your assessments stay credible.',
   },
   {
     icon: Award,
-    title: 'WAEC / NECO Alignment',
+    title: 'WAEC/NECO Ready',
     description:
-      'Every assessment automatically embeds questions matching national examination standards and style. Your students are exam-ready.',
-  },
-  {
-    icon: Stamp,
-    title: 'Session Stamping',
-    description:
-      'Every document shows the current academic session and term. Last year\'s notes are visibly outdated to principals and inspectors.',
+      'Every exam automatically includes questions matching national examination standards. Your students walk into WAEC prepared, not surprised.',
   },
   {
     icon: Download,
     title: 'School-Branded PDFs',
     description:
-      'Export print-ready lesson notes and exam papers with your school name, logo, and branding. Professional output every time.',
-  },
-  {
-    icon: Wifi,
-    title: 'Works Offline',
-    description:
-      'PWA technology means teachers can view, edit, and print notes without internet. Syncs automatically when connection returns.',
+      'Print-ready documents with your school name, logo, and session stamp. Submit to inspectors with confidence — everything looks professional.',
   },
   {
     icon: BarChart3,
-    title: 'Admin Dashboard',
+    title: 'Know What\'s Happening',
     description:
-      'School owners see exactly how the platform is used: notes generated, hours saved, teacher activity, and ROI at a glance.',
+      'See exactly how many notes were generated, which teachers are active, and how many hours your school saved this term. ROI you can measure.',
   },
   {
-    icon: CalendarDays,
-    title: 'Scheme of Work',
+    icon: Wifi,
+    title: 'Works Without Internet',
     description:
-      'Generate a fresh scheme of work every term. Topics, timelines, and objectives — aligned to NERDC and ready for submission.',
+      'Teachers in areas with poor connectivity can still view, edit, and print notes offline. Everything syncs when connection returns.',
   },
 ]
 
@@ -67,32 +55,32 @@ export default function Product() {
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">
-            Product
+            What You Get
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight">
-            Everything Your School Needs to Run Smarter
+            Everything your teachers need. Nothing they don&apos;t.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            From lesson notes to exam papers, KlassRun automates the work your
-            teachers do every week — all aligned to the Nigerian curriculum.
+            KlassRun automates the work your teachers do every week — so they
+            spend less time writing and more time teaching.
           </p>
         </div>
 
-        {/* Features grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature) => (
+        {/* Outcomes grid — 3x2 instead of 4x2, gives more breathing room */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {outcomes.map((item) => (
             <div
-              key={feature.title}
-              className="group rounded-2xl border border-border bg-white p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+              key={item.title}
+              className="group rounded-2xl border border-border bg-white p-7 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
             >
-              <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
-                <feature.icon size={22} className="text-primary" />
+              <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                <item.icon size={24} className="text-primary" />
               </div>
               <h3 className="text-base font-bold text-foreground mb-2">
-                {feature.title}
+                {item.title}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
+                {item.description}
               </p>
             </div>
           ))}

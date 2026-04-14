@@ -13,35 +13,33 @@ export default function CTA() {
 
           <div className="relative px-8 py-16 md:px-16 md:py-20 text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight max-w-3xl mx-auto leading-tight">
-              Stop Writing Lesson Notes.{' '}
-              <span className="text-primary">Start Teaching.</span>
+              Stop writing.{' '}
+              <span className="text-primary">Start teaching.</span>
             </h2>
             <p className="mt-5 text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
-              Join the schools that are saving 200+ hours per term with
-              KlassRun. Start your free trial today — no credit card needed.
+              Your teachers deserve better than spending every evening writing
+              lesson notes. KlassRun gives them their time back — starting today.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="mailto:info@klassrun.com"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 hover:bg-klassrun-green-dark transition-all"
+                href="https://app.klassrun.com/signup"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all"
               >
                 Start Free Trial
                 <ArrowRight size={18} />
               </a>
-              {/* <a
-                href="https://wa.me/2348000000000"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a
+                href="mailto:info@klassrun.com"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                Chat on WhatsApp
-              </a> */}
+                Talk to Us
+              </a>
             </div>
 
             <p className="mt-6 text-sm text-white/50">
-              First term free for pilot schools · No setup fees · Cancel
-              anytime
+              No credit card required · First term free for pilot schools ·
+              Cancel anytime
             </p>
           </div>
         </div>

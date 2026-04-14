@@ -46,11 +46,9 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Headline */}
+            {/* Headline — sells the outcome */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground">
-              Your Teachers Spend{' '}
-              <span className="text-primary">10–15 Hours</span> Every Week
-              Writing{' '}
+              Generate{' '}
               <span className="relative inline-block">
                 <span
                   key={wordIndex}
@@ -58,20 +56,21 @@ export default function Hero() {
                 >
                   {rotatingWords[wordIndex]}
                 </span>
-              </span>
+              </span>{' '}
+              in Seconds, Not Hours
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-              KlassRun generates curriculum-aligned lesson notes, WAEC/NECO exam
-              questions, and schemes of work in seconds — not hours. Give your
-              teachers their time back.
+              KlassRun saves your teachers 10–15 hours every week by
+              auto-generating curriculum-aligned content — NERDC topics,
+              WAEC/NECO standards, school-branded PDFs. All on autopilot.
             </p>
 
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a
                 href="https://app.klassrun.com/signup"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 hover:bg-klassrun-green-dark transition-all hover:shadow-xl hover:shadow-primary/30"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/30"
               >
                 Start Free Trial
                 <ArrowRight size={18} />
@@ -84,24 +83,24 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Social proof metrics */}
+            {/* Outcome metrics — not feature counts */}
             <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-border">
               <div>
                 <div className="flex items-center gap-2 text-primary">
                   <Clock size={18} />
-                  <span className="text-2xl font-bold text-foreground">294+</span>
+                  <span className="text-2xl font-bold text-foreground">4x</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Hours saved per term
+                  Faster lesson prep
                 </p>
               </div>
               <div>
                 <div className="flex items-center gap-2 text-primary">
                   <FileText size={18} />
-                  <span className="text-2xl font-bold text-foreground">50+</span>
+                  <span className="text-2xl font-bold text-foreground">50%</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Subjects covered
+                  Less admin work
                 </p>
               </div>
               <div>
@@ -132,89 +131,51 @@ export default function Hero() {
                 </div>
                 <div className="flex-1 mx-4">
                   <div className="bg-secondary rounded-md px-3 py-1.5 text-xs text-muted-foreground text-center">
-                   klassrun.com
+                    app.klassrun.com
                   </div>
                 </div>
               </div>
 
               {/* App mockup content */}
               <div className="p-6 space-y-4">
-                {/* Top bar */}
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-xs text-muted-foreground">Welcome back,</p>
-                    <p className="text-sm font-semibold text-foreground">
-                      Mrs. Adeyemi
-                    </p>
+                    <p className="text-sm font-semibold text-foreground">Mrs. Adeyemi</p>
                   </div>
                   <div className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
                     2025/2026 · Term 2
                   </div>
                 </div>
 
-                {/* Quick actions */}
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-xl bg-primary/10 border border-primary/20 p-4 group cursor-pointer hover:bg-primary/15 transition-colors">
+                  <div className="rounded-xl bg-primary/10 border border-primary/20 p-4 cursor-pointer hover:bg-primary/15 transition-colors">
                     <FileText size={20} className="text-primary mb-2" />
-                    <p className="text-sm font-semibold text-foreground">
-                      Generate Lesson Note
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      JSS 2 · Mathematics
-                    </p>
+                    <p className="text-sm font-semibold text-foreground">Generate Lesson Note</p>
+                    <p className="text-xs text-muted-foreground mt-1">JSS 2 · Mathematics</p>
                   </div>
                   <div className="rounded-xl bg-secondary border border-border p-4 cursor-pointer hover:bg-secondary/80 transition-colors">
                     <GraduationCap size={20} className="text-foreground/60 mb-2" />
-                    <p className="text-sm font-semibold text-foreground">
-                      Create Exam Paper
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      SS 1 · English Language
-                    </p>
+                    <p className="text-sm font-semibold text-foreground">Create Exam Paper</p>
+                    <p className="text-xs text-muted-foreground mt-1">SS 1 · English Language</p>
                   </div>
                 </div>
 
-                {/* Recent activity */}
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    Recent
-                  </p>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Recent</p>
                   {[
-                    {
-                      subject: 'Basic Science',
-                      class: 'JSS 1',
-                      type: 'Lesson Note',
-                      time: '2 mins ago',
-                    },
-                    {
-                      subject: 'Mathematics',
-                      class: 'SS 2',
-                      type: 'Exam Questions',
-                      time: '1 hour ago',
-                    },
-                    {
-                      subject: 'Civic Education',
-                      class: 'JSS 3',
-                      type: 'Scheme of Work',
-                      time: '3 hours ago',
-                    },
+                    { subject: 'Basic Science', class: 'JSS 1', type: 'Lesson Note', time: '2 mins ago' },
+                    { subject: 'Mathematics', class: 'SS 2', type: 'Exam Questions', time: '1 hour ago' },
+                    { subject: 'Civic Education', class: 'JSS 3', type: 'Scheme of Work', time: '3 hours ago' },
                   ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex items-center justify-between rounded-lg bg-white border border-border px-4 py-3"
-                    >
+                    <div key={i} className="flex items-center justify-between rounded-lg bg-white border border-border px-4 py-3">
                       <div>
                         <p className="text-sm font-medium text-foreground">
-                          {item.subject}{' '}
-                          <span className="text-muted-foreground">
-                            · {item.class}
-                          </span>
+                          {item.subject} <span className="text-muted-foreground">· {item.class}</span>
                         </p>
                         <p className="text-xs text-muted-foreground">{item.type}</p>
                       </div>
-                      <span className="text-xs text-muted-foreground">
-                        {item.time}
-                      </span>
+                      <span className="text-xs text-muted-foreground">{item.time}</span>
                     </div>
                   ))}
                 </div>
