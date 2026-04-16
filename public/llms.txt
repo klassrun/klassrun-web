@@ -1,0 +1,74 @@
+# Klassrun Technologies Ltd
+
+> AI-powered lesson notes, exam questions, and school management — built exclusively for Nigerian schools.
+
+## About
+
+Klassrun Technologies Ltd is a CAC-registered EdTech company (RC 9463863) incorporated in Lagos, Nigeria on April 3, 2026. The company builds KlassRun, an AI-powered School Operating System designed for Nigerian private primary and secondary schools.
+
+KlassRun automates the most time-consuming administrative tasks that Nigerian teachers face — specifically lesson note preparation, exam question creation, and scheme of work generation. All content is aligned to the NERDC curriculum and WAEC/NECO examination standards.
+
+## The Problem KlassRun Solves
+
+Nigerian teachers spend 10–15 hours per week writing lesson notes and preparing exam questions manually. Most schools still copy from old notebooks or recycle outdated content. No existing tool automatically aligns generated content with NERDC curriculum and WAEC/NECO standards. School owners have no visibility into teacher productivity or curriculum coverage.
+
+## Product — KlassRun
+
+KlassRun is a subscription-based SaaS platform. Core capabilities include:
+
+- AI Lesson Note Generator: Generates complete, structured, curriculum-aligned lesson notes per subject, class, and topic in under 60 seconds.
+- Exam Question Generator: Creates fresh exam questions per term. AI tracks previously generated questions per school and never duplicates. Includes WAEC/NECO-standard questions.
+- Scheme of Work Generator: Generates term-by-term schemes of work aligned to NERDC topics.
+- Session Stamping: Every generated document displays the current academic session and term.
+- School-Branded PDF Export: Print-ready lesson notes and exam papers with school name, logo, and branding.
+- Offline Access: Progressive Web App (PWA) with offline viewing, editing, and printing. Syncs when connectivity returns.
+- Admin Dashboard: Shows usage analytics including notes generated, hours saved, teacher activity, and ROI metrics.
+- Question Bank: Every question ever generated for a school is stored, searchable by subject, topic, difficulty, and term.
+
+## Target Market
+
+- Primary: Private primary and secondary schools in Nigeria (50,000+ registered)
+- Initial focus: Lagos and Abuja
+- Secondary: Mission and church school networks
+- Future: Government schools via ministry procurement
+
+## Product Status
+
+Pre-launch. Currently building the MVP. Landing page live at klassrun.com. Application platform at app.klassrun.com.
+
+## Curriculum Alignment
+
+KlassRun content aligns to:
+- NERDC (Nigerian Educational Research and Development Council) national curriculum
+- WAEC (West African Examinations Council) examination standards
+- NECO (National Examinations Council) examination standards
+
+## Pricing
+
+Subscription-based, billed per term (the way Nigerian schools budget). Three tiers: Starter, Standard, and Premium. Annual billing available at a discount. Enterprise pricing for school networks with 3+ schools.
+
+
+## Leadership
+
+- Adegbite Muhammed Adedamola — Co-founder & CEO
+- Afeez Temitope Bello — Co-founder & CTO
+
+## Team
+
+Small team including developers, designers, advisors, and marketing.
+
+## Company Details
+
+- Company: Klassrun Technologies Ltd
+- Registration: CAC RC 9463863
+- Location: Lagos, Nigeria
+- Website: https://klassrun.com
+- App: https://app.klassrun.com
+- Email: info@klassrun.com
+- LinkedIn: https://www.linkedin.com/in/klassrun-ng-33013b400/
+- Instagram: https://www.instagram.com/klassrun/
+
+## Links
+
+- [Homepage](https://klassrun.com)
+- [App Platform](https://app.klassrun.com)
