@@ -50,11 +50,10 @@ export default function HowItWorks() {
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid md:grid-cols-4 gap-10 md:gap-6"
+        className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6"
       >
         {steps.map((item, i) => (
           <motion.div key={item.step} variants={fadeUp} className="relative">
-            {/* Dotted connector */}
             {i < steps.length - 1 && (
               <div
                 className="hidden md:block absolute top-10 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px"
@@ -68,18 +67,19 @@ export default function HowItWorks() {
 
             <div className="text-center">
               <div className="relative inline-flex">
-                <div className="h-20 w-20 rounded-2xl bg-primary/8 ring-1 ring-primary/10 flex items-center justify-center mx-auto shadow-xs">
-                  <item.icon size={30} className="text-primary" />
+                <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-primary/8 ring-1 ring-primary/10 flex items-center justify-center mx-auto shadow-xs">
+                  <item.icon size={26} className="text-primary sm:hidden" />
+                  <item.icon size={30} className="text-primary hidden sm:block" />
                 </div>
                 <span className="absolute -top-2 -right-2 h-6 w-6 rounded-full bg-primary text-primary-foreground text-[10px] font-semibold flex items-center justify-center ring-4 ring-background">
                   {item.step}
                 </span>
               </div>
 
-              <h3 className="mt-6 text-[15px] font-semibold text-foreground tracking-tight">
+              <h3 className="mt-5 sm:mt-6 text-sm sm:text-[15px] font-semibold text-foreground tracking-tight">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed max-w-[240px] mx-auto">
+              <p className="mt-2 text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-[240px] mx-auto">
                 {item.description}
               </p>
             </div>

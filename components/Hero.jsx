@@ -3,15 +3,10 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Clock, FileText, GraduationCap } from 'lucide-react'
-import { fadeUp, stagger, ease, viewportOnce } from '@/lib/motion'
+import { fadeUp, stagger, ease } from '@/lib/motion'
 import { MotionCard } from './ui/MotionCard'
 
-const rotatingWords = [
-  'Lesson Notes',
-  'Exam Questions',
-  'Schemes of Work',
-  'Report Cards',
-]
+const rotatingWords = ['Lesson Notes', 'Exam Questions', 'Schemes of Work', 'Report Cards']
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
@@ -24,7 +19,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[92vh] flex items-center pt-24 md:pt-28 overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-center pt-28 sm:pt-32 md:pt-28 overflow-hidden">
       {/* Background atmosphere */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-0 right-0 w-[640px] h-[640px] bg-primary/[0.06] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
@@ -41,9 +36,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left — copy */}
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <motion.div
             variants={stagger(0.1, 0.12)}
             initial="hidden"
@@ -62,7 +56,7 @@ export default function Hero() {
 
             <motion.h1
               variants={fadeUp}
-              className="text-[2.5rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground"
+              className="text-[2.25rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground"
             >
               Generate{' '}
               <span className="relative inline-block align-baseline">
@@ -82,7 +76,7 @@ export default function Hero() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl"
+              className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
               KlassRun saves your teachers 10–15 hours every week by
               auto-generating curriculum-aligned content — NERDC topics,
@@ -91,7 +85,7 @@ export default function Hero() {
 
             <motion.div
               variants={fadeUp}
-              className="mt-10 flex flex-col sm:flex-row gap-3"
+              className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3"
             >
               <a
                 href="https://app.klassrun.com/signup"
@@ -108,10 +102,9 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Outcome metrics */}
             <motion.div
               variants={fadeUp}
-              className="mt-12 grid grid-cols-3 gap-8 pt-8 border-t border-subtle"
+              className="mt-10 sm:mt-12 grid grid-cols-3 gap-5 sm:gap-8 pt-8 border-t border-subtle"
             >
               {[
                 { icon: Clock, metric: '4×', label: 'Faster lesson prep' },
@@ -119,13 +112,13 @@ export default function Hero() {
                 { icon: GraduationCap, metric: '100%', label: 'NERDC aligned' },
               ].map(({ icon: Icon, metric, label }) => (
                 <div key={label}>
-                  <div className="flex items-center gap-2 text-primary">
+                  <div className="flex items-center gap-1.5 sm:gap-2 text-primary">
                     <Icon size={16} />
-                    <span className="text-2xl font-semibold text-foreground tracking-tight">
+                    <span className="text-xl sm:text-2xl font-semibold text-foreground tracking-tight">
                       {metric}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground mt-1.5 leading-snug">
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1 sm:mt-1.5 leading-snug">
                     {label}
                   </p>
                 </div>
@@ -133,7 +126,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right — product mockup */}
+          {/* Product mockup */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -141,11 +134,11 @@ export default function Hero() {
             className="lg:col-span-5 relative"
           >
             <MotionCard
+              entrance="none"
               intensity={6}
               lift={2}
               className="rounded-2xl bg-surface-elevated border border-soft p-2 shadow-hero"
             >
-              {/* Browser chrome */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-subtle">
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
@@ -159,14 +152,11 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Mockup body */}
-              <div className="p-6 space-y-4">
+              <div className="p-5 sm:p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-[11px] text-muted-foreground">Welcome back,</p>
-                    <p className="text-sm font-semibold text-foreground tracking-tight">
-                      Mrs. Adeyemi
-                    </p>
+                    <p className="text-sm font-semibold text-foreground tracking-tight">Mrs. Adeyemi</p>
                   </div>
                   <div className="text-[11px] bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
                     2025/2026 · Term 2
@@ -176,21 +166,13 @@ export default function Hero() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="rounded-xl bg-primary/10 ring-1 ring-primary/15 p-4 cursor-pointer hover:bg-primary/15 transition-colors duration-300">
                     <FileText size={18} className="text-primary mb-2" />
-                    <p className="text-sm font-semibold text-foreground tracking-tight">
-                      Generate Lesson Note
-                    </p>
-                    <p className="text-[11px] text-muted-foreground mt-1">
-                      JSS 2 · Mathematics
-                    </p>
+                    <p className="text-sm font-semibold text-foreground tracking-tight">Generate Lesson Note</p>
+                    <p className="text-[11px] text-muted-foreground mt-1">JSS 2 · Mathematics</p>
                   </div>
                   <div className="rounded-xl bg-secondary border border-subtle p-4 cursor-pointer hover:bg-secondary/70 transition-colors duration-300">
                     <GraduationCap size={18} className="text-foreground/60 mb-2" />
-                    <p className="text-sm font-semibold text-foreground tracking-tight">
-                      Create Exam Paper
-                    </p>
-                    <p className="text-[11px] text-muted-foreground mt-1">
-                      SS 1 · English Language
-                    </p>
+                    <p className="text-sm font-semibold text-foreground tracking-tight">Create Exam Paper</p>
+                    <p className="text-[11px] text-muted-foreground mt-1">SS 1 · English Language</p>
                   </div>
                 </div>
 
@@ -213,9 +195,7 @@ export default function Hero() {
                       <div>
                         <p className="text-sm font-medium text-foreground tracking-tight">
                           {item.subject}{' '}
-                          <span className="text-muted-foreground font-normal">
-                            · {item.class}
-                          </span>
+                          <span className="text-muted-foreground font-normal">· {item.class}</span>
                         </p>
                         <p className="text-[11px] text-muted-foreground">{item.type}</p>
                       </div>
@@ -226,20 +206,18 @@ export default function Hero() {
               </div>
             </MotionCard>
 
-            {/* Floating badge */}
             <motion.div
               initial={{ opacity: 0, x: -16, y: 16 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6, ease }}
-              className="absolute -bottom-5 -left-5 bg-white rounded-xl border border-soft shadow-lift px-4 py-3 flex items-center gap-3"
+              className="absolute -bottom-4 -left-2 sm:-bottom-5 sm:-left-5 bg-white rounded-xl border border-soft shadow-lift px-3.5 py-2.5 sm:px-4 sm:py-3 flex items-center gap-3"
             >
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <Clock size={18} className="text-primary" />
+              <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <Clock size={16} className="text-primary sm:hidden" />
+                <Clock size={18} className="text-primary hidden sm:block" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-foreground tracking-tight">
-                  3 hours saved
-                </p>
+                <p className="text-sm font-semibold text-foreground tracking-tight">3 hours saved</p>
                 <p className="text-[11px] text-muted-foreground">This afternoon</p>
               </div>
             </motion.div>

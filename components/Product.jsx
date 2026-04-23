@@ -11,7 +11,7 @@ import {
 import { motion } from 'framer-motion'
 import { Section, SectionHeader } from './ui/Section'
 import { MotionCard } from './ui/MotionCard'
-import { stagger, viewportOnce } from '@/lib/motion'
+import { gridStagger, viewportOnce } from '@/lib/motion'
 
 const outcomes = [
   {
@@ -24,7 +24,7 @@ const outcomes = [
     icon: ClipboardCheck,
     title: 'Fresh Exams Every Term',
     description:
-      'AI tracks every question generated for your school and never duplicates. Students can\'t recycle answers. Assessments stay credible.',
+      "AI tracks every question generated for your school and never duplicates. Students can't recycle answers. Assessments stay credible.",
   },
   {
     icon: Award,
@@ -62,20 +62,22 @@ export default function Product() {
       />
 
       <motion.div
-        variants={stagger(0.04, 0.08)}
+        variants={gridStagger}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
         className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 perspective-card"
       >
-        {outcomes.map((item) => (
+        {outcomes.map((item, i) => (
           <MotionCard
             key={item.title}
-            intensity={6}
-            lift={6}
-            className="group rounded-2xl border border-soft bg-white p-7 shadow-xs hover:shadow-card hover:border-primary/20 transition-all duration-500"
+            entrance="lift"
+            index={i % 3}
+            intensity={8}
+            lift={8}
+            className="group rounded-2xl border border-soft bg-white p-6 sm:p-7 shadow-xs hover:shadow-card hover:border-primary/20 transition-all duration-500"
           >
-            <div className="h-11 w-11 rounded-xl bg-primary/10 ring-1 ring-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 group-hover:ring-primary/20 transition-all duration-500">
+            <div className="h-11 w-11 rounded-xl bg-primary/10 ring-1 ring-primary/10 flex items-center justify-center mb-5 sm:mb-6 group-hover:bg-primary/15 group-hover:ring-primary/20 transition-all duration-500">
               <item.icon size={20} className="text-primary" />
             </div>
             <h3 className="text-[15px] font-semibold text-foreground mb-2.5 tracking-tight">

@@ -40,12 +40,10 @@
     --color-foreground: var(--foreground);
     --color-background: var(--background);
 
-    /* ── Surface layers ─────────────────────────────────── */
     --color-surface-base: var(--surface-base);
     --color-surface-elevated: var(--surface-elevated);
     --color-surface-floating: var(--surface-floating);
 
-    /* ── Radius scale ───────────────────────────────────── */
     --radius-sm: calc(var(--radius) * 0.6);
     --radius-md: calc(var(--radius) * 0.8);
     --radius-lg: var(--radius);
@@ -54,7 +52,7 @@
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
 
-    /* Klassrun custom color tokens (UNCHANGED palette) */
+    /* Klassrun palette (UNCHANGED) */
     --color-klassrun-green: oklch(0.65 0.178 145);
     --color-klassrun-green-dark: oklch(0.52 0.148 145);
     --color-klassrun-green-light: oklch(0.75 0.15 145);
@@ -63,7 +61,6 @@
 }
 
 :root {
-    /* ── Klassrun palette (UNCHANGED) ───────────────────── */
     --background: oklch(1 0 0);
     --foreground: oklch(0.22 0.025 255);
 
@@ -108,16 +105,13 @@
     --sidebar-border: oklch(0.922 0.004 260);
     --sidebar-ring: oklch(0.65 0.178 145);
 
-    /* ── Surface layers (base · elevated · floating) ────── */
     --surface-base: oklch(0.995 0.002 260);
     --surface-elevated: oklch(1 0 0);
     --surface-floating: oklch(1 0 0);
 
-    /* ── Soft borders ───────────────────────────────────── */
     --border-subtle: oklch(0.945 0.003 260);
     --border-soft: oklch(0.92 0.004 260);
 
-    /* ── Shadow tokens (subtle, layered) ────────────────── */
     --shadow-xs: 0 1px 2px 0 oklch(0.22 0.025 255 / 0.04);
     --shadow-sm: 0 1px 2px 0 oklch(0.22 0.025 255 / 0.04),
                  0 1px 3px 0 oklch(0.22 0.025 255 / 0.06);
@@ -130,6 +124,8 @@
     --shadow-2xl: 0 25px 50px -12px oklch(0.22 0.025 255 / 0.18);
     --shadow-glow: 0 0 0 1px oklch(0.65 0.178 145 / 0.12),
                    0 8px 24px -4px oklch(0.65 0.178 145 / 0.18);
+    --shadow-float: 0 8px 32px -4px oklch(0.22 0.025 255 / 0.08),
+                    0 2px 8px -2px oklch(0.22 0.025 255 / 0.04);
 }
 
 .dark {
@@ -178,9 +174,7 @@
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
+    * { @apply border-border outline-ring/50; }
     body {
         @apply bg-background text-foreground antialiased;
         font-feature-settings: "cv11", "ss01", "ss03";
@@ -193,7 +187,6 @@
         text-size-adjust: 100%;
     }
 
-    /* ── Typography hierarchy ─────────────────────────── */
     h1, h2, h3, h4 {
         letter-spacing: -0.02em;
         font-feature-settings: "ss01", "ss03";
@@ -207,14 +200,13 @@
     }
 }
 
-/* ── 8px spacing system helper classes ──────────────── */
 @layer utilities {
-    .stack-1 > * + * { margin-top: 0.5rem; }   /* 8 */
-    .stack-2 > * + * { margin-top: 1rem; }     /* 16 */
-    .stack-3 > * + * { margin-top: 1.5rem; }   /* 24 */
-    .stack-4 > * + * { margin-top: 2rem; }     /* 32 */
-    .stack-6 > * + * { margin-top: 3rem; }     /* 48 */
-    .stack-8 > * + * { margin-top: 4rem; }     /* 64 */
+    .stack-1 > * + * { margin-top: 0.5rem; }
+    .stack-2 > * + * { margin-top: 1rem; }
+    .stack-3 > * + * { margin-top: 1.5rem; }
+    .stack-4 > * + * { margin-top: 2rem; }
+    .stack-6 > * + * { margin-top: 3rem; }
+    .stack-8 > * + * { margin-top: 4rem; }
 
     .surface-base      { background-color: var(--surface-base); }
     .surface-elevated  { background-color: var(--surface-elevated); }
@@ -223,36 +215,30 @@
     .border-subtle { border-color: var(--border-subtle); }
     .border-soft   { border-color: var(--border-soft); }
 
-    .shadow-xs   { box-shadow: var(--shadow-xs); }
-    .shadow-soft { box-shadow: var(--shadow-sm); }
-    .shadow-card { box-shadow: var(--shadow-md); }
-    .shadow-lift { box-shadow: var(--shadow-lg); }
-    .shadow-pop  { box-shadow: var(--shadow-xl); }
-    .shadow-hero { box-shadow: var(--shadow-2xl); }
-    .shadow-glow { box-shadow: var(--shadow-glow); }
+    .shadow-xs    { box-shadow: var(--shadow-xs); }
+    .shadow-soft  { box-shadow: var(--shadow-sm); }
+    .shadow-card  { box-shadow: var(--shadow-md); }
+    .shadow-lift  { box-shadow: var(--shadow-lg); }
+    .shadow-pop   { box-shadow: var(--shadow-xl); }
+    .shadow-hero  { box-shadow: var(--shadow-2xl); }
+    .shadow-glow  { box-shadow: var(--shadow-glow); }
+    .shadow-float { box-shadow: var(--shadow-float); }
 
+    /* Glassmorphism — true frosted glass that lets palette bleed through */
     .glass {
-        background-color: oklch(1 0 0 / 0.72);
-        backdrop-filter: saturate(180%) blur(12px);
-        -webkit-backdrop-filter: saturate(180%) blur(12px);
+        background-color: oklch(1 0 0 / 0.55);
+        backdrop-filter: saturate(180%) blur(14px);
+        -webkit-backdrop-filter: saturate(180%) blur(14px);
     }
     .glass-strong {
-        background-color: oklch(1 0 0 / 0.85);
-        backdrop-filter: saturate(180%) blur(20px);
-        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        background-color: oklch(1 0 0 / 0.72);
+        backdrop-filter: saturate(200%) blur(20px);
+        -webkit-backdrop-filter: saturate(200%) blur(20px);
     }
-
-    .grain {
-        position: relative;
-    }
-    .grain::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-        opacity: 0.025;
-        pointer-events: none;
-        mix-blend-mode: multiply;
+    .glass-pill {
+        background-color: oklch(1 0 0 / 0.65);
+        backdrop-filter: saturate(180%) blur(18px);
+        -webkit-backdrop-filter: saturate(180%) blur(18px);
     }
 
     .perspective-card {
@@ -261,7 +247,6 @@
     }
 }
 
-/* ── Reduced motion respect ─────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;

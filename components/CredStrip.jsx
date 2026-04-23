@@ -13,19 +13,19 @@ const credentials = [
 export default function CredStrip() {
   return (
     <section className="border-y border-subtle bg-secondary/40">
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 py-8">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 py-6 sm:py-8">
         <motion.div
           variants={stagger(0, 0.1)}
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 place-items-center"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 place-items-center sm:place-items-stretch"
         >
           {credentials.map((cred) => (
             <motion.div
               key={cred.label}
               variants={fadeUp}
-              className="flex items-center gap-3 text-center sm:text-left"
+              className="flex items-center justify-center gap-3 w-full"
             >
               <div className="h-10 w-10 rounded-lg bg-primary/10 ring-1 ring-primary/10 flex items-center justify-center shrink-0">
                 <cred.icon size={18} className="text-primary" />

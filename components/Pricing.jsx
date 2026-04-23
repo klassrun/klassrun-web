@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Section, SectionHeader } from './ui/Section'
 import { MotionCard } from './ui/MotionCard'
-import { stagger, viewportOnce } from '@/lib/motion'
+import { gridStagger, viewportOnce } from '@/lib/motion'
 
 const plans = [
   {
@@ -70,18 +70,20 @@ export default function Pricing() {
       />
 
       <motion.div
-        variants={stagger(0.05, 0.1)}
+        variants={gridStagger}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
         className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto perspective-card"
       >
-        {plans.map((plan) => (
+        {plans.map((plan, i) => (
           <MotionCard
             key={plan.name}
-            intensity={plan.highlighted ? 4 : 6}
-            lift={plan.highlighted ? 4 : 8}
-            className={`relative rounded-2xl p-8 ${
+            entrance="flip"
+            index={i}
+            intensity={plan.highlighted ? 6 : 9}
+            lift={plan.highlighted ? 6 : 10}
+            className={`relative rounded-2xl p-7 sm:p-8 ${
               plan.highlighted
                 ? 'bg-foreground text-white ring-1 ring-foreground shadow-hero md:scale-[1.03]'
                 : 'bg-white border border-soft shadow-xs hover:shadow-card transition-shadow duration-500'
@@ -134,9 +136,7 @@ export default function Pricing() {
                 <li key={feature} className="flex items-start gap-3">
                   <span
                     className={`mt-0.5 flex-shrink-0 h-4 w-4 rounded-full flex items-center justify-center ${
-                      plan.highlighted
-                        ? 'bg-primary/20'
-                        : 'bg-primary/10'
+                      plan.highlighted ? 'bg-primary/20' : 'bg-primary/10'
                     }`}
                   >
                     <Check size={10} className="text-primary" strokeWidth={3} />
@@ -166,7 +166,7 @@ export default function Pricing() {
         ))}
       </motion.div>
 
-      <div className="mt-16 text-center">
+      <div className="mt-12 sm:mt-16 text-center">
         <p className="text-sm text-muted-foreground">
           Running 3+ schools?{' '}
           <a href="#contact" className="text-primary font-semibold hover:underline underline-offset-4">

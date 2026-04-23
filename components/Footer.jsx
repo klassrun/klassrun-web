@@ -26,7 +26,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-subtle bg-foreground">
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 py-16 md:py-20">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 py-14 md:py-20">
         <div className="grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-6">
             <Image
@@ -69,9 +69,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-sm font-semibold text-white mb-5 tracking-tight">
-              Product
-            </h4>
+            <h4 className="text-sm font-semibold text-white mb-5 tracking-tight">Product</h4>
             <ul className="space-y-3">
               {[
                 { label: 'Lesson Notes', href: '#product' },
@@ -92,9 +90,7 @@ export default function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-sm font-semibold text-white mb-5 tracking-tight">
-              Contact
-            </h4>
+            <h4 className="text-sm font-semibold text-white mb-5 tracking-tight">Contact</h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -115,8 +111,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/40">
+        <div className="mt-12 sm:mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/40 text-center sm:text-left">
             © {new Date().getFullYear()} Klassrun Technologies Ltd. All rights reserved.
           </p>
           <div className="flex gap-6">

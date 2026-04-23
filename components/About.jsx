@@ -1,10 +1,10 @@
 'use client'
 
 import { Clock, AlertTriangle, EyeOff } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { Section, SectionHeader } from './ui/Section'
 import { MotionCard } from './ui/MotionCard'
-import { motion } from 'framer-motion'
-import { stagger, viewportOnce } from '@/lib/motion'
+import { gridStagger, viewportOnce } from '@/lib/motion'
 
 const painPoints = [
   {
@@ -37,17 +37,19 @@ export default function About() {
       />
 
       <motion.div
-        variants={stagger(0.05, 0.1)}
+        variants={gridStagger}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid md:grid-cols-3 gap-6 md:gap-8 perspective-card"
+        className="grid md:grid-cols-3 gap-5 md:gap-8 perspective-card"
       >
-        {painPoints.map((point) => (
+        {painPoints.map((point, i) => (
           <MotionCard
             key={point.title}
-            intensity={5}
-            lift={8}
+            entrance="flip"
+            index={i}
+            intensity={10}
+            lift={10}
             className="rounded-2xl border border-soft bg-white px-6 py-8 md:px-8 md:py-10 text-center shadow-xs hover:shadow-card transition-shadow duration-500"
           >
             <div className="h-12 w-12 rounded-xl bg-destructive/10 ring-1 ring-destructive/10 flex items-center justify-center mx-auto mb-6">

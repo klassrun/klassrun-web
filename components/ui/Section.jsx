@@ -3,16 +3,12 @@
 import { motion } from 'framer-motion'
 import { fadeUp, stagger, viewportOnce } from '@/lib/motion'
 
-/**
- * Section — the single structural primitive for landing sections.
- * Handles: max width, padding, spacing rhythm, scroll reveal.
- */
 export function Section({
   id,
   children,
   className = '',
-  surface = 'base',       // 'base' | 'elevated' | 'floating' | 'muted'
-  bleed = false,          // removes horizontal padding — full-bleed layouts
+  surface = 'base',
+  bleed = false,
 }) {
   const surfaceCls = {
     base: '',
@@ -24,21 +20,17 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative py-24 md:py-32 ${surfaceCls} ${className}`}
+      className={`relative py-20 md:py-28 lg:py-32 ${surfaceCls} ${className}`}
     >
-      <div className={bleed ? '' : 'mx-auto w-full max-w-6xl px-6 sm:px-8'}>
+      <div className={bleed ? '' : 'mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8'}>
         {children}
       </div>
     </section>
   )
 }
 
-/**
- * SectionHeader — eyebrow + title + subtitle with consistent rhythm.
- */
 export function SectionHeader({ eyebrow, title, subtitle, align = 'center' }) {
-  const alignCls =
-    align === 'center' ? 'text-center mx-auto' : 'text-left'
+  const alignCls = align === 'center' ? 'text-center mx-auto' : 'text-left'
 
   return (
     <motion.div
@@ -46,19 +38,19 @@ export function SectionHeader({ eyebrow, title, subtitle, align = 'center' }) {
       initial="hidden"
       whileInView="show"
       viewport={viewportOnce}
-      className={`max-w-2xl ${alignCls} mb-16 md:mb-20`}
+      className={`max-w-2xl ${alignCls} mb-14 md:mb-20`}
     >
       {eyebrow && (
         <motion.p
           variants={fadeUp}
-          className="text-xs font-semibold text-primary uppercase tracking-[0.18em] mb-4"
+          className="text-[11px] sm:text-xs font-semibold text-primary uppercase tracking-[0.18em] mb-4"
         >
           {eyebrow}
         </motion.p>
       )}
       <motion.h2
         variants={fadeUp}
-        className="text-3xl sm:text-4xl md:text-[2.75rem] font-semibold text-foreground leading-[1.1]"
+        className="text-[1.75rem] sm:text-4xl md:text-[2.75rem] font-semibold text-foreground leading-[1.1]"
       >
         {title}
       </motion.h2>
