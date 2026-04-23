@@ -25,35 +25,33 @@ export default function Footer() {
   const EMAIL_ADDRESS = 'info@klassrun.com'
 
   return (
-    <footer className="border-t border-border bg-foreground">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid md:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="md:col-span-2">
+    <footer className="border-t border-subtle bg-foreground">
+      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 py-16 md:py-20">
+        <div className="grid md:grid-cols-12 gap-10 md:gap-12">
+          <div className="md:col-span-6">
             <Image
               src="/images/logo-nav.webp"
               alt="Klassrun"
               width={120}
               height={36}
-              className="h-10 w-auto brightness-0 invert"
+              className="h-9 w-auto brightness-0 invert"
               unoptimized
             />
-            <p className="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">
+            <p className="mt-5 text-sm text-white/60 leading-relaxed max-w-sm">
               AI-powered lesson notes, exam questions, and school management —
               built exclusively for Nigerian schools. Save your teachers 10+
               hours every week.
             </p>
-            <p className="mt-4 text-xs text-white/40">
+            <p className="mt-5 text-xs text-white/40 tracking-wide">
               Klassrun Technologies Ltd · RC 9463863 · Lagos, Nigeria
             </p>
 
-            {/* Social links */}
-            <div className="mt-5 flex items-center gap-4">
+            <div className="mt-6 flex items-center gap-5">
               <a
                 href="https://www.instagram.com/klassrun/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 hover:text-primary transition-colors"
+                className="text-white/45 hover:text-primary transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <InstagramIcon size={18} />
@@ -62,7 +60,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/klassrun-ng-33013b400/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/40 hover:text-primary transition-colors"
+                className="text-white/45 hover:text-primary transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon size={18} />
@@ -70,10 +68,11 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Product</h4>
-            <ul className="space-y-2.5">
+          <div className="md:col-span-3">
+            <h4 className="text-sm font-semibold text-white mb-5 tracking-tight">
+              Product
+            </h4>
+            <ul className="space-y-3">
               {[
                 { label: 'Lesson Notes', href: '#product' },
                 { label: 'Exam Questions', href: '#product' },
@@ -83,7 +82,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/60 hover:text-primary transition-colors"
+                    className="text-sm text-white/60 hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
                   </a>
@@ -92,14 +91,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Contact</h4>
+          <div className="md:col-span-3">
+            <h4 className="text-sm font-semibold text-white mb-5 tracking-tight">
+              Contact
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${EMAIL_ADDRESS}`}
-                  className="flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-sm text-white/60 hover:text-primary transition-colors duration-300"
                 >
                   <Mail size={14} />
                   {EMAIL_ADDRESS}
@@ -115,23 +115,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} Klassrun Technologies Ltd. All rights
-            reserved.
+            © {new Date().getFullYear()} Klassrun Technologies Ltd. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-xs text-white/40 hover:text-white/60 transition-colors"
-            >
+            <a href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors duration-300">
               Privacy Policy
             </a>
-            <a
-              href="#"
-              className="text-xs text-white/40 hover:text-white/60 transition-colors"
-            >
+            <a href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors duration-300">
               Terms of Service
             </a>
           </div>

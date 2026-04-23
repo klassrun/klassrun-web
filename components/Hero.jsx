@@ -1,7 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowRight, Clock, FileText, GraduationCap } from 'lucide-react'
+import { fadeUp, stagger, ease, viewportOnce } from '@/lib/motion'
+import { MotionCard } from './ui/MotionCard'
 
 const rotatingWords = [
   'Lesson Notes',
@@ -12,187 +15,235 @@ const rotatingWords = [
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    setIsVisible(true)
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % rotatingWords.length)
-    }, 2500)
+    }, 2800)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+    <section className="relative min-h-[92vh] flex items-center pt-24 md:pt-28 overflow-hidden">
+      {/* Background atmosphere */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[640px] h-[640px] bg-primary/[0.06] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-[440px] h-[440px] bg-primary/[0.05] rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 1px 1px, oklch(0.22 0.025 255 / 0.06) 1px, transparent 0)',
+            backgroundSize: '32px 32px',
+            maskImage:
+              'radial-gradient(ellipse at center, black 40%, transparent 75%)',
+          }}
+        />
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left - Copy */}
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+      <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 py-16 md:py-24">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left — copy */}
+          <motion.div
+            variants={stagger(0.1, 0.12)}
+            initial="hidden"
+            animate="show"
+            className="lg:col-span-7"
           >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 mb-6">
+            <motion.div
+              variants={fadeUp}
+              className="inline-flex items-center gap-2 rounded-full bg-primary/10 ring-1 ring-primary/15 px-3.5 py-1.5 mb-6"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-semibold text-primary tracking-wide uppercase">
+              <span className="text-[11px] font-semibold text-primary tracking-[0.14em] uppercase">
                 Built for Nigerian Schools
               </span>
-            </div>
+            </motion.div>
 
-            {/* Headline — sells the outcome */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-foreground">
+            <motion.h1
+              variants={fadeUp}
+              className="text-[2.5rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground"
+            >
               Generate{' '}
-              <span className="relative inline-block">
-                <span
+              <span className="relative inline-block align-baseline">
+                <motion.span
                   key={wordIndex}
-                  className="text-primary animate-in fade-in slide-in-from-bottom-2 duration-500"
+                  initial={{ y: 18, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -18, opacity: 0 }}
+                  transition={{ duration: 0.5, ease }}
+                  className="text-primary"
                 >
                   {rotatingWords[wordIndex]}
-                </span>
+                </motion.span>
               </span>{' '}
-              in Seconds, Not Hours
-            </h1>
+              in seconds, not hours.
+            </motion.h1>
 
-            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl"
+            >
               KlassRun saves your teachers 10–15 hours every week by
               auto-generating curriculum-aligned content — NERDC topics,
               WAEC/NECO standards, school-branded PDFs. All on autopilot.
-            </p>
+            </motion.p>
 
-            {/* CTA Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <motion.div
+              variants={fadeUp}
+              className="mt-10 flex flex-col sm:flex-row gap-3"
+            >
               <a
                 href="https://app.klassrun.com/signup"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/25 hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/30"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-klassrun-green-dark transition-all duration-300 ease-out hover:-translate-y-0.5"
               >
                 Start Free Trial
-                <ArrowRight size={18} />
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-7 py-3.5 text-base font-semibold text-foreground hover:bg-secondary transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-soft bg-white px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-secondary transition-colors duration-300 ease-out"
               >
-                See How It Works
+                See how it works
               </a>
-            </div>
+            </motion.div>
 
-            {/* Outcome metrics — not feature counts */}
-            <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-border">
-              <div>
-                <div className="flex items-center gap-2 text-primary">
-                  <Clock size={18} />
-                  <span className="text-2xl font-bold text-foreground">4x</span>
+            {/* Outcome metrics */}
+            <motion.div
+              variants={fadeUp}
+              className="mt-12 grid grid-cols-3 gap-8 pt-8 border-t border-subtle"
+            >
+              {[
+                { icon: Clock, metric: '4×', label: 'Faster lesson prep' },
+                { icon: FileText, metric: '50%', label: 'Less admin work' },
+                { icon: GraduationCap, metric: '100%', label: 'NERDC aligned' },
+              ].map(({ icon: Icon, metric, label }) => (
+                <div key={label}>
+                  <div className="flex items-center gap-2 text-primary">
+                    <Icon size={16} />
+                    <span className="text-2xl font-semibold text-foreground tracking-tight">
+                      {metric}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-1.5 leading-snug">
+                    {label}
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Faster lesson prep
-                </p>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 text-primary">
-                  <FileText size={18} />
-                  <span className="text-2xl font-bold text-foreground">50%</span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Less admin work
-                </p>
-              </div>
-              <div>
-                <div className="flex items-center gap-2 text-primary">
-                  <GraduationCap size={18} />
-                  <span className="text-2xl font-bold text-foreground">100%</span>
-                </div>
-                <p className="text-sm text-muted-foreground mt-1">
-                  NERDC aligned
-                </p>
-              </div>
-            </div>
-          </div>
+              ))}
+            </motion.div>
+          </motion.div>
 
-          {/* Right - Product Mockup */}
-          <div
-            className={`relative transition-all duration-700 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
+          {/* Right — product mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease, delay: 0.2 }}
+            className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-2xl bg-foreground/[0.03] border border-border p-2 shadow-2xl shadow-primary/10">
+            <MotionCard
+              intensity={6}
+              lift={2}
+              className="rounded-2xl bg-surface-elevated border border-soft p-2 shadow-hero"
+            >
               {/* Browser chrome */}
-              <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
+              <div className="flex items-center gap-2 px-4 py-3 border-b border-subtle">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
                 </div>
                 <div className="flex-1 mx-4">
-                  <div className="bg-secondary rounded-md px-3 py-1.5 text-xs text-muted-foreground text-center">
+                  <div className="bg-secondary rounded-md px-3 py-1.5 text-[11px] text-muted-foreground text-center font-medium">
                     app.klassrun.com
                   </div>
                 </div>
               </div>
 
-              {/* App mockup content */}
+              {/* Mockup body */}
               <div className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-xs text-muted-foreground">Welcome back,</p>
-                    <p className="text-sm font-semibold text-foreground">Mrs. Adeyemi</p>
+                    <p className="text-[11px] text-muted-foreground">Welcome back,</p>
+                    <p className="text-sm font-semibold text-foreground tracking-tight">
+                      Mrs. Adeyemi
+                    </p>
                   </div>
-                  <div className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
+                  <div className="text-[11px] bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">
                     2025/2026 · Term 2
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-xl bg-primary/10 border border-primary/20 p-4 cursor-pointer hover:bg-primary/15 transition-colors">
-                    <FileText size={20} className="text-primary mb-2" />
-                    <p className="text-sm font-semibold text-foreground">Generate Lesson Note</p>
-                    <p className="text-xs text-muted-foreground mt-1">JSS 2 · Mathematics</p>
+                  <div className="rounded-xl bg-primary/10 ring-1 ring-primary/15 p-4 cursor-pointer hover:bg-primary/15 transition-colors duration-300">
+                    <FileText size={18} className="text-primary mb-2" />
+                    <p className="text-sm font-semibold text-foreground tracking-tight">
+                      Generate Lesson Note
+                    </p>
+                    <p className="text-[11px] text-muted-foreground mt-1">
+                      JSS 2 · Mathematics
+                    </p>
                   </div>
-                  <div className="rounded-xl bg-secondary border border-border p-4 cursor-pointer hover:bg-secondary/80 transition-colors">
-                    <GraduationCap size={20} className="text-foreground/60 mb-2" />
-                    <p className="text-sm font-semibold text-foreground">Create Exam Paper</p>
-                    <p className="text-xs text-muted-foreground mt-1">SS 1 · English Language</p>
+                  <div className="rounded-xl bg-secondary border border-subtle p-4 cursor-pointer hover:bg-secondary/70 transition-colors duration-300">
+                    <GraduationCap size={18} className="text-foreground/60 mb-2" />
+                    <p className="text-sm font-semibold text-foreground tracking-tight">
+                      Create Exam Paper
+                    </p>
+                    <p className="text-[11px] text-muted-foreground mt-1">
+                      SS 1 · English Language
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Recent</p>
+                  <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-[0.14em]">
+                    Recent
+                  </p>
                   {[
                     { subject: 'Basic Science', class: 'JSS 1', type: 'Lesson Note', time: '2 mins ago' },
                     { subject: 'Mathematics', class: 'SS 2', type: 'Exam Questions', time: '1 hour ago' },
                     { subject: 'Civic Education', class: 'JSS 3', type: 'Scheme of Work', time: '3 hours ago' },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center justify-between rounded-lg bg-white border border-border px-4 py-3">
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.6 + i * 0.08, duration: 0.4, ease }}
+                      className="flex items-center justify-between rounded-lg bg-white border border-subtle px-4 py-3"
+                    >
                       <div>
-                        <p className="text-sm font-medium text-foreground">
-                          {item.subject} <span className="text-muted-foreground">· {item.class}</span>
+                        <p className="text-sm font-medium text-foreground tracking-tight">
+                          {item.subject}{' '}
+                          <span className="text-muted-foreground font-normal">
+                            · {item.class}
+                          </span>
                         </p>
-                        <p className="text-xs text-muted-foreground">{item.type}</p>
+                        <p className="text-[11px] text-muted-foreground">{item.type}</p>
                       </div>
-                      <span className="text-xs text-muted-foreground">{item.time}</span>
-                    </div>
+                      <span className="text-[11px] text-muted-foreground">{item.time}</span>
+                    </motion.div>
                   ))}
                 </div>
               </div>
-            </div>
+            </MotionCard>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl border border-border shadow-lg px-4 py-3 flex items-center gap-3 animate-in fade-in slide-in-from-left-4 duration-1000 delay-700">
+            <motion.div
+              initial={{ opacity: 0, x: -16, y: 16 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6, ease }}
+              className="absolute -bottom-5 -left-5 bg-white rounded-xl border border-soft shadow-lift px-4 py-3 flex items-center gap-3"
+            >
               <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <Clock size={20} className="text-primary" />
+                <Clock size={18} className="text-primary" />
               </div>
               <div>
-                <p className="text-sm font-bold text-foreground">3 hours saved</p>
-                <p className="text-xs text-muted-foreground">This afternoon</p>
+                <p className="text-sm font-semibold text-foreground tracking-tight">
+                  3 hours saved
+                </p>
+                <p className="text-[11px] text-muted-foreground">This afternoon</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
