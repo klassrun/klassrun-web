@@ -46,8 +46,8 @@ export default function CTA() {
               variants={fadeUp}
               className="mt-5 sm:mt-6 text-base md:text-lg text-white/65 max-w-xl mx-auto leading-relaxed"
             >
-              Your teachers deserve better than spending every evening writing
-              lesson notes. KlassRun gives them their time back — starting today.
+              Stop juggling templates, WhatsApp groups, and last-minute exam prep.
+              Klassrun runs your school — starting today.
             </motion.p>
 
             <motion.div

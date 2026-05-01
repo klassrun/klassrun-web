@@ -15,11 +15,11 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    default: 'Klassrun Technologies Ltd — AI-Powered EdTech for Nigerian Schools',
+    default: 'Klassrun — The AI-powered School Operating System for Nigerian Schools',
     template: '%s | Klassrun Technologies',
   },
-  description:
-    'Klassrun Technologies Ltd is a CAC-registered EdTech company building AI-powered software for Nigerian schools — automated lesson notes, WAEC/NECO exam questions, and school management systems.',
+description:
+  "Run your school's academics from one place. AI-powered lesson notes, schemes of work, WAEC/NECO exam prep, results, and parent portal — built for Nigerian schools.",
   keywords: [
     'EdTech Nigeria',
     'lesson note generator Nigeria',
@@ -41,9 +41,9 @@ export const metadata = {
     locale: 'en_NG',
     url: BASE_URL,
     siteName: 'Klassrun Technologies Ltd',
-    title: 'Klassrun Technologies Ltd — AI-Powered EdTech for Nigerian Schools',
+    title: 'Klassrun — The AI-powered School Operating System for Nigerian Schools',
     description:
-      'CAC-registered EdTech company building AI-powered software for Nigerian schools. Lesson notes, exam questions, and school management — all curriculum-aligned.',
+      "Run your school's academics from one place. AI-powered lesson notes, schemes of work, WAEC/NECO exam prep, results, and parent portal — built for Nigerian schools.",
     images: [
       {
         url: `${BASE_URL}/images/og-image.webp`,
@@ -58,7 +58,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Klassrun Technologies Ltd',
-    description: 'AI-powered EdTech software for Nigerian schools.',
+    description: 'The AI-powered school operating system for Nigerian schools.',
     images: [`${BASE_URL}/images/og-image.webp`],
   },
 
@@ -99,7 +99,7 @@ const jsonLd = {
   url: 'https://klassrun.com',
   logo: 'https://klassrun.com/images/logo.webp',
   description:
-    'AI-powered EdTech software for Nigerian schools — lesson notes, exam questions, and school management systems.',
+    'The AI-powered school operating system for Nigerian schools — lesson notes, schemes of work, WAEC/NECO exam preparation, results, and parent portal, all built for the Nigerian curriculum.',
   foundingLocation: {
     '@type': 'Place',
     name: 'Nigeria',

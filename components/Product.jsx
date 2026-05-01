@@ -57,8 +57,8 @@ export default function Product() {
     <Section id="product" surface="muted">
       <SectionHeader
         eyebrow="What You Get"
-        title="Everything your teachers need. Nothing they don't."
-        subtitle="KlassRun automates the work your teachers do every week — so they spend less time writing and more time teaching."
+        title="Everything your school needs. Nothing it doesn't."
+        subtitle="Klassrun gives Nigerian schools one platform for academics, exam preparation, and academic oversight — with AI built specifically for the Nigerian curriculum."
       />
 
       <motion.div

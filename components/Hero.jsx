@@ -50,7 +50,7 @@ export default function Hero() {
             >
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               <span className="text-[11px] font-semibold text-primary tracking-[0.14em] uppercase">
-                Built for Nigerian Schools
+                The Nigerian School Operating System
               </span>
             </motion.div>
 
@@ -78,9 +78,9 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
-              KlassRun saves your teachers 10–15 hours every week by
-              auto-generating curriculum-aligned content — NERDC topics,
-              WAEC/NECO standards, school-branded PDFs. All on autopilot.
+              Klassrun is the AI-powered operating system for Nigerian schools. Run your
+              academics from one place — lesson notes, schemes of work,
+              WAEC/NECO exam prep, results, and parent portal. Built for the Nigerian curriculum.
             </motion.p>
 
             <motion.div

@@ -32,8 +32,8 @@ export default function About() {
     <Section id="about">
       <SectionHeader
         eyebrow="Why KlassRun"
-        title="Your school deserves better than manual processes"
-        subtitle="KlassRun eliminates the repetitive admin work that burns teachers out, so they can focus on what actually matters — teaching."
+        title="Run your entire school from one place"
+        subtitle="Klassrun replaces lesson plan templates, exam prep folders, scheme of work files, and supervisor checklists with one AI-powered system that runs your school's academics end to end."
       />
 
       <motion.div

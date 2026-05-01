@@ -38,9 +38,9 @@ export default function Footer() {
               unoptimized
             />
             <p className="mt-5 text-sm text-white/60 leading-relaxed max-w-sm">
-              AI-powered lesson notes, exam questions, and school management —
-              built exclusively for Nigerian schools. Save your teachers 10+
-              hours every week.
+              The AI-powered school operating system for Nigerian schools. Lesson notes,
+              exam prep, schemes of work, and academic oversight — built for the
+              Nigerian curriculum.
             </p>
             <p className="mt-5 text-xs text-white/40 tracking-wide">
               Klassrun Technologies Ltd · RC 9463863 · Lagos, Nigeria

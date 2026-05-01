@@ -1,29 +1,60 @@
 # Klassrun Technologies Ltd
 
-> AI-powered lesson notes, exam questions, and school management — built exclusively for Nigerian schools.
+> The AI-powered school operating system for Nigerian schools. One platform for lesson notes, schemes of work, WAEC/NECO exam preparation, results, parent portal, and academic oversight — built for the Nigerian curriculum.
 
 ## About
 
-Klassrun Technologies Ltd is a CAC-registered EdTech company (RC 9463863) incorporated in Lagos, Nigeria on April 3, 2026. The company builds KlassRun, an AI-powered School Operating System designed for Nigerian private primary and secondary schools.
+Klassrun Technologies Ltd is a CAC-registered EdTech company (RC 9463863) incorporated in Lagos, Nigeria on April 3, 2026. The company builds Klassrun, an AI-powered school operating system for Nigerian private primary and secondary schools.
 
-KlassRun automates the most time-consuming administrative tasks that Nigerian teachers face — specifically lesson note preparation, exam question creation, and scheme of work generation. All content is aligned to the NERDC curriculum and WAEC/NECO examination standards.
+Klassrun is positioned as a complete School OS — not a lesson note generator. The AI-powered academic engine (lesson notes, schemes of work, exam questions) is the wedge; results management, parent portal, attendance, fees, and school operations follow as schools adopt the platform.
 
-## The Problem KlassRun Solves
+## Positioning
 
-Nigerian teachers spend 10–15 hours per week writing lesson notes and preparing exam questions manually. Most schools still copy from old notebooks or recycle outdated content. No existing tool automatically aligns generated content with NERDC curriculum and WAEC/NECO standards. School owners have no visibility into teacher productivity or curriculum coverage.
+Klassrun is the AI-powered school operating system for Nigerian schools. Each school operates on their own subdomain (school-name.klassrun.com) with isolated data, branded portals, and a unified academic workflow.
 
-## Product — KlassRun
+We are not "AI for lesson notes." We are a school operating system, with AI as the engine.
 
-KlassRun is a subscription-based SaaS platform. Core capabilities include:
+## The Problem Klassrun Solves
 
-- AI Lesson Note Generator: Generates complete, structured, curriculum-aligned lesson notes per subject, class, and topic in under 60 seconds.
-- Exam Question Generator: Creates fresh exam questions per term. AI tracks previously generated questions per school and never duplicates. Includes WAEC/NECO-standard questions.
-- Scheme of Work Generator: Generates term-by-term schemes of work aligned to NERDC topics.
-- Session Stamping: Every generated document displays the current academic session and term.
-- School-Branded PDF Export: Print-ready lesson notes and exam papers with school name, logo, and branding.
-- Offline Access: Progressive Web App (PWA) with offline viewing, editing, and printing. Syncs when connectivity returns.
-- Admin Dashboard: Shows usage analytics including notes generated, hours saved, teacher activity, and ROI metrics.
-- Question Bank: Every question ever generated for a school is stored, searchable by subject, topic, difficulty, and term.
+Nigerian private schools currently juggle Word templates for lesson notes, Excel spreadsheets for results, WhatsApp groups for parent communication, paper folders for schemes of work, and last-minute scrambles to prepare WAEC/NECO-standard exam questions. There is no single system that runs school academics end to end while being aligned to the Nigerian curriculum (NERDC) and examination standards (WAEC, NECO).
+
+Klassrun replaces all of this with one AI-powered platform.
+
+## Product Capabilities
+
+### Tier S — AI Academic Core (Phase 1)
+- AI Lesson Note Generator — curriculum-aligned, generated in under 60 seconds
+- Scheme of Work Generator — full 12-week termly schemes per subject and class
+- Exam Question Generator — WAEC, NECO, GCE, BECE style with configurable difficulty
+- School Question Bank with deduplication — never repeat exam questions
+- Education-only AI guardrails — restricted to academic tasks only
+- Curriculum alignment to NERDC, WAEC, NECO standards
+
+### Tier A — Platform Foundation (Phase 1)
+- Multi-tenant SaaS architecture — each school on their own subdomain
+- Per-school branding (logo, color, letterhead on PDFs)
+- Subscription billing via Paystack (14-day free trial)
+- Roles: Super Admin, School Admin, Teacher
+
+### Tier B — Sticky Operations (Phase 2)
+- Results and grading system with PDF report cards
+- AI-generated report card comments
+- Parent portal with magic-link auth
+- Attendance management
+- Student management (admissions, profiles, transfers)
+
+### Tier C — Full School Operations (Phase 3)
+- Fees and payment management with Account Officer role
+- SMS, WhatsApp, email notifications
+- Staff management (HR)
+- CBT / online examinations
+- Timetable management with conflict detection
+- Document management
+- Reporting and analytics
+
+### Tier D / E — On-Demand Modules (Phase 4)
+- Hostel, transport, library, inventory, accounting modules
+- Advanced AI: performance analysis, dropout prediction, smart admission ranking
 
 ## Target Market
 
@@ -32,30 +63,36 @@ KlassRun is a subscription-based SaaS platform. Core capabilities include:
 - Secondary: Mission and church school networks
 - Future: Government schools via ministry procurement
 
-## Product Status
+## Architecture
 
-Pre-launch. Currently building the MVP. Landing page live at klassrun.com. Application platform at app.klassrun.com.
+- klassrun.com — marketing site (this site)
+- app.klassrun.com — authentication, super admin, school portal entry
+- {school-slug}.klassrun.com — individual school portals
+- api.klassrun.com — backend API (Node.js, Express, PostgreSQL, Prisma)
+
+Multi-tenancy is enforced at the data layer via scoped Prisma client. Each school's data is isolated by schoolId in every query.
 
 ## Curriculum Alignment
 
-KlassRun content aligns to:
+Klassrun content aligns to:
 - NERDC (Nigerian Educational Research and Development Council) national curriculum
 - WAEC (West African Examinations Council) examination standards
 - NECO (National Examinations Council) examination standards
 
+Note: We generate content in WAEC/NECO style. There is no public WAEC/NECO API.
+
 ## Pricing
 
-Subscription-based, billed per term (the way Nigerian schools budget). Three tiers: Starter, Standard, and Premium. Annual billing available at a discount. Enterprise pricing for school networks with 3+ schools.
+Subscription-based, billed per term (the way Nigerian schools budget). Three tiers: Starter, Standard, and Premium. Annual billing available at a discount. Enterprise pricing for school networks with 3+ schools. 14-day free trial, no credit card required.
 
+## Product Status
+
+Phase 1 in active build. Multi-tenant foundation, schema, and AI integration in progress. Landing page live at klassrun.com. Application platform at app.klassrun.com.
 
 ## Leadership
 
 - Adegbite Muhammed Adedamola — Co-founder & CEO
 - Afeez Temitope Bello — Co-founder & CTO
-
-## Team
-
-Small team including developers, designers, advisors, and marketing.
 
 ## Company Details
 
