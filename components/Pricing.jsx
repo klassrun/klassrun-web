@@ -9,7 +9,7 @@ import { gridStagger, viewportOnce } from '@/lib/motion'
 const plans = [
   {
     name: 'Starter',
-    price: '30,000',
+    price: 'coming soon',
     period: '/term',
     description: 'For schools under 200 students getting started with AI.',
     features: [
@@ -25,7 +25,7 @@ const plans = [
   },
   {
     name: 'Standard',
-    price: '60,000',
+    price: 'coming soon',
     period: '/term',
     description: 'For growing schools that want data-driven operations.',
     features: [
@@ -43,7 +43,7 @@ const plans = [
   },
   {
     name: 'Premium',
-    price: '100,000',
+    price: 'coming soon',
     period: '/term',
     description: 'The full School OS for serious institutions.',
     features: [
