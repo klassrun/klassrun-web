@@ -25,14 +25,14 @@ const steps = [
     icon: Sparkles,
     title: 'AI Generates Content',
     description:
-      'KlassRun produces a complete lesson note, exam, or scheme of work — curriculum-aligned, WAEC-standard.',
+      'Klassrun produces a complete lesson note, exam, or scheme of work — curriculum-aligned, WAEC-standard.',
   },
   {
     step: '04',
     icon: Download,
-    title: 'Download & Teach',
+    title: 'Use & Teach',
     description:
-      'Download school-branded PDFs ready for submission. Edit if needed — the content is yours.',
+      'View, edit, and use your generated content. PDF export with school branding coming soon.',
   },
 ]
 

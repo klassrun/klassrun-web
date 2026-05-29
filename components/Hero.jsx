@@ -6,7 +6,7 @@ import { ArrowRight, Clock, FileText, GraduationCap } from 'lucide-react'
 import { fadeUp, stagger, ease } from '@/lib/motion'
 import { MotionCard } from './ui/MotionCard'
 
-const rotatingWords = ['Lesson Notes', 'Exam Questions', 'Schemes of Work', 'Report Cards']
+const rotatingWords = ['Lesson Notes', 'Schemes of Work', 'Exam Questions', 'Question Banks']
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
@@ -79,8 +79,8 @@ export default function Hero() {
               className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
               Klassrun is the AI-powered operating system for Nigerian schools. Run your
-              academics from one place — lesson notes, schemes of work,
-              WAEC/NECO exam prep, results, and parent portal. Built for the Nigerian curriculum.
+              academics from one place — lesson notes, schemes of work, and WAEC/NECO
+              exam prep — with results, attendance, and parent portal coming as you grow.
             </motion.p>
 
             <motion.div

@@ -9,56 +9,64 @@ import { gridStagger, viewportOnce } from '@/lib/motion'
 const plans = [
   {
     name: 'Starter',
-    price: 'coming soon',
+    price: 40000,
     period: '/term',
-    description: 'For schools under 200 students getting started with AI.',
+    description: 'For schools getting started with AI lesson planning.',
     features: [
-      'AI Lesson Note Generator',
-      'Exam Question Generator',
-      'Session Stamping',
-      'PDF Export (school-branded)',
-      'Offline Access (PWA)',
-      'Up to 10 teachers',
+      { text: 'AI Lesson Note Generator', soon: false },
+      { text: 'AI Scheme of Work Generator', soon: false },
+      { text: 'Session & Term management', soon: false },
+      { text: 'Up to 10 teachers', soon: false },
     ],
     cta: 'Start Free Trial',
+    ctaHref: 'https://app.klassrun.com/signup',
     highlighted: false,
   },
   {
     name: 'Standard',
-    price: 'coming soon',
+    price: 60000,
     period: '/term',
-    description: 'For growing schools that want data-driven operations.',
+    description: 'For schools running their whole term inside Klassrun.',
     features: [
-      'Everything in Starter',
-      'School Question Bank',
-      'Student Performance Tracking',
-      'Report Card Comments (AI)',
-      'Usage Analytics Dashboard',
-      'Scheme of Work Generator',
-      'Up to 30 teachers',
+      { text: 'Everything in Starter', soon: false },
+      { text: 'Upload your scheme → generate aligned lesson notes', soon: true },
+      { text: 'AI Exam Question Generator', soon: true },
+      { text: 'School Question Bank (never repeat questions)', soon: true },
+      { text: 'PDF Export with school branding', soon: true },
+      { text: 'Usage analytics', soon: true },
+      { text: 'Up to 30 teachers', soon: false },
     ],
     cta: 'Start Free Trial',
+    ctaHref: 'https://app.klassrun.com/signup',
     highlighted: true,
     badge: 'Most Popular',
   },
   {
     name: 'Premium',
-    price: 'coming soon',
+    price: 150000,
     period: '/term',
-    description: 'The full School OS for serious institutions.',
+    description: 'The full school operations platform.',
     features: [
-      'Everything in Standard',
-      'Parent Portal',
-      'Attendance Tracking',
-      'Grading & Report Cards',
-      'Curriculum Update Alerts',
-      'Priority Support',
-      'Unlimited teachers',
+      { text: 'Everything in Standard', soon: false },
+      { text: 'Results & Report Cards', soon: true },
+      { text: 'AI Report Card Comments', soon: true },
+      { text: 'Attendance Tracking', soon: true },
+      { text: 'Parent Portal', soon: true },
+      { text: 'Unlimited teachers', soon: false },
+      { text: 'Priority support', soon: false },
     ],
     cta: 'Contact Sales',
+    ctaHref: '#contact',
     highlighted: false,
   },
 ]
+
+function formatPrice(price) {
+  if (typeof price === 'number') {
+    return `₦${price.toLocaleString('en-NG')}`
+  }
+  return price
+}
 
 export default function Pricing() {
   return (
@@ -68,6 +76,15 @@ export default function Pricing() {
         title="Simple, termly pricing"
         subtitle="Pay per term — the way Nigerian schools budget. No hidden fees, no per-teacher charges. Save 10% with annual billing."
       />
+
+      <div className="text-center mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 ring-1 ring-primary/15 px-4 py-2">
+          <Check size={14} className="text-primary" strokeWidth={3} />
+          <span className="text-xs sm:text-sm font-medium text-foreground">
+            All plans start with a 14-day free trial. No card required.
+          </span>
+        </div>
+      </div>
 
       <motion.div
         variants={gridStagger}
@@ -120,7 +137,7 @@ export default function Pricing() {
                   plan.highlighted ? 'text-white' : 'text-foreground'
                 }`}
               >
-                ₦{plan.price}
+                {formatPrice(plan.price)}
               </span>
               <span
                 className={`text-sm ${
@@ -133,7 +150,7 @@ export default function Pricing() {
 
             <ul className="space-y-3 mb-8">
               {plan.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
+                <li key={feature.text} className="flex items-start gap-3">
                   <span
                     className={`mt-0.5 flex-shrink-0 h-4 w-4 rounded-full flex items-center justify-center ${
                       plan.highlighted ? 'bg-primary/20' : 'bg-primary/10'
@@ -142,18 +159,29 @@ export default function Pricing() {
                     <Check size={10} className="text-primary" strokeWidth={3} />
                   </span>
                   <span
-                    className={`text-sm leading-relaxed ${
+                    className={`text-sm leading-relaxed flex-1 ${
                       plan.highlighted ? 'text-white/80' : 'text-muted-foreground'
                     }`}
                   >
-                    {feature}
+                    {feature.text}
+                    {feature.soon && (
+                      <span
+                        className={`ml-2 inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide ${
+                          plan.highlighted
+                            ? 'bg-white/15 text-white/80'
+                            : 'bg-foreground/8 text-foreground/65'
+                        }`}
+                      >
+                        Soon
+                      </span>
+                    )}
                   </span>
                 </li>
               ))}
             </ul>
 
             <a
-              href="#contact"
+              href={plan.ctaHref}
               className={`block w-full text-center rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5 ${
                 plan.highlighted
                   ? 'bg-primary text-primary-foreground hover:bg-klassrun-green-dark shadow-[var(--shadow-glow)]'
@@ -166,13 +194,13 @@ export default function Pricing() {
         ))}
       </motion.div>
 
-      <div className="mt-12 sm:mt-16 text-center">
-        <p className="text-sm text-muted-foreground">
-          Running 3+ schools?{' '}
+      <div className="mt-12 sm:mt-16 text-center max-w-2xl mx-auto">
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Larger school, multi-campus group, or need fee management, CBT, or bursar workflows?{' '}
           <a href="#contact" className="text-primary font-semibold hover:underline underline-offset-4">
-            Contact us for Enterprise pricing
+            Contact us
           </a>{' '}
-          — custom branding, multi-school management, dedicated support.
+          — we'll quote and roadmap with you directly.
         </p>
       </div>
     </Section>
