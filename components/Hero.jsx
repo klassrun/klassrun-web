@@ -58,7 +58,7 @@ export default function Hero() {
               variants={fadeUp}
               className="text-[2.25rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground"
             >
-              One AI platform to run{' '}
+              One AI integrated platform to run{' '}
               <span className="relative inline-block align-baseline">
                 <motion.span
                   key={wordIndex}
