@@ -6,7 +6,7 @@ import { ArrowRight, Clock, FileText, GraduationCap } from 'lucide-react'
 import { fadeUp, stagger, ease } from '@/lib/motion'
 import { MotionCard } from './ui/MotionCard'
 
-const rotatingWords = ['Lesson Notes', 'Schemes of Work', 'Exam Questions', 'Question Banks']
+const rotatingWords = ['lesson notes', 'schemes of work', 'exam prep', 'results & report cards', 'your whole school']
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
@@ -58,7 +58,7 @@ export default function Hero() {
               variants={fadeUp}
               className="text-[2.25rem] sm:text-5xl lg:text-[3.75rem] font-semibold leading-[1.05] tracking-[-0.035em] text-foreground"
             >
-              Generate{' '}
+              One AI platform to run{' '}
               <span className="relative inline-block align-baseline">
                 <motion.span
                   key={wordIndex}
@@ -70,8 +70,7 @@ export default function Hero() {
                 >
                   {rotatingWords[wordIndex]}
                 </motion.span>
-              </span>{' '}
-              in seconds, not hours.
+              </span>.
             </motion.h1>
 
             <motion.p

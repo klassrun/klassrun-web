@@ -1,12 +1,9 @@
 'use client'
 
+// batch-web-os-product
 import {
-  FileText,
-  ClipboardCheck,
-  Award,
-  Download,
-  Wifi,
-  BarChart3,
+  FileText, CalendarDays, ClipboardCheck, Library, Target, GraduationCap,
+  MessageSquare, ClipboardList, Wallet, Users, Monitor, Globe,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Section, SectionHeader } from './ui/Section'
@@ -14,57 +11,27 @@ import { MotionCard } from './ui/MotionCard'
 import { gridStagger, viewportOnce } from '@/lib/motion'
 
 const outcomes = [
-  {
-    icon: FileText,
-    title: 'Lesson Notes on Autopilot',
-    description:
-      'Complete, curriculum-aligned notes generated in under 60 seconds. Teachers pick subject, class, and topic — Klassrun handles the rest.',
-    soon: false,
-  },
-  {
-    icon: ClipboardCheck,
-    title: 'Fresh Exams Every Term',
-    description:
-      "AI will track every question generated for your school and never duplicate. Students can't recycle answers. Assessments stay credible.",
-    soon: true,
-  },
-  {
-    icon: Award,
-    title: 'WAEC/NECO Ready',
-    description:
-      'Every assessment we generate is aligned to national examination standards. Students walk in prepared, not surprised.',
-    soon: false,
-  },
-  {
-    icon: Download,
-    title: 'School-Branded PDFs',
-    description:
-      'Print-ready documents with your school name, logo, and session stamp. Submit to inspectors with confidence.',
-    soon: true,
-  },
-  {
-    icon: BarChart3,
-    title: "Know What's Happening",
-    description:
-      'See how many notes were generated, which teachers are active, and how many hours your school saved this term. ROI you can measure.',
-    soon: true,
-  },
-  {
-    icon: Wifi,
-    title: 'Works Without Internet',
-    description:
-      'Teachers in low-connectivity areas can still view notes offline. Everything syncs when connection returns.',
-    soon: false,
-  },
+  { icon: FileText, title: 'AI Lesson Notes', description: 'Complete, curriculum-aligned notes in under 60 seconds. Pick class, subject and topic — Klassrun writes the note.', soon: false },
+  { icon: CalendarDays, title: 'Schemes of Work', description: 'Full termly schemes, week by week, in the format Nigerian schools must submit.', soon: false },
+  { icon: ClipboardCheck, title: 'WAEC / NECO Exam Questions', description: 'Objective, theory and essay questions in national exam style — with marking guides.', soon: false },
+  { icon: Library, title: 'School Question Bank', description: 'Every question saved to a private bank you build over years — so you never set the same paper twice.', soon: false },
+  { icon: Target, title: 'NERDC Curriculum Alignment', description: 'AI grounded in the actual prescribed topic for that class, subject and term — not generic guesses.', soon: true },
+  { icon: GraduationCap, title: 'Results & Report Cards', description: 'CA and exam scores auto-compute totals, grades and class positions into a Nigerian report card.', soon: true },
+  { icon: MessageSquare, title: 'AI Report-Card Comments', description: 'Personalised class-teacher and principal remarks generated per student — the task every teacher dreads.', soon: true },
+  { icon: ClipboardList, title: 'Attendance & Behaviour', description: 'Daily attendance and termly behavioural assessment, straight onto the report card.', soon: true },
+  { icon: Wallet, title: 'Fees & Bursar', description: 'Track paid and unpaid fees, bulk-update by CSV, and see collection at a glance.', soon: true },
+  { icon: Users, title: 'Parent & Student Portal', description: 'Parents see results, attendance, fees and events — and stop calling the office.', soon: true },
+  { icon: Monitor, title: 'CBT Exams', description: 'Computer-based testing with timed papers and auto-graded objectives, from your question bank.', soon: true },
+  { icon: Globe, title: 'School Website & CMS', description: 'Post news, events and galleries to a public school site — no developer needed.', soon: true },
 ]
 
 export default function Product() {
   return (
     <Section id="product" surface="muted">
       <SectionHeader
-        eyebrow="What You Get"
-        title="Everything your school needs. Nothing it doesn't."
-        subtitle="Klassrun gives Nigerian schools one platform for academics, exam preparation, and academic oversight — with AI built specifically for the Nigerian curriculum."
+        eyebrow="The whole school, one platform"
+        title="More than lesson notes — your whole school, with AI"
+        subtitle="Klassrun runs your academics and your operations from one place: the AI that saves teachers their Sunday nights, plus the results, report cards, attendance, fees and parent portal that run the rest of the building."
       />
 
       <motion.div
