@@ -15,11 +15,11 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    default: 'Klassrun — The AI-powered School Operating System for Nigerian Schools',
+    default: 'Klassrun — School Management Software for Nigerian Schools',
     template: '%s | Klassrun Technologies',
   },
-description:
-  "Run your school's academics from one place. AI-powered lesson notes, schemes of work, WAEC/NECO exam prep, results, and parent portal — built for Nigerian schools.",
+  description:
+    'Run your school from one place. Lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees — with AI lesson note and exam question generation. Built for Nigerian schools.',
   keywords: [
     'EdTech Nigeria',
     'lesson note generator Nigeria',
@@ -41,9 +41,9 @@ description:
     locale: 'en_NG',
     url: BASE_URL,
     siteName: 'Klassrun Technologies Ltd',
-    title: 'Klassrun — The AI-powered School Operating System for Nigerian Schools',
+    title: 'Klassrun — School Management Software for Nigerian Schools',
     description:
-      "Run your school's academics from one place. AI-powered lesson notes, schemes of work, WAEC/NECO exam prep, results, and parent portal — built for Nigerian schools.",
+      'Run your school from one place. Lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees. Built for Nigerian schools.',
     images: [
       {
         url: `${BASE_URL}/images/og-image.webp`,
@@ -58,7 +58,7 @@ description:
   twitter: {
     card: 'summary_large_image',
     title: 'Klassrun Technologies Ltd',
-    description: 'The AI-powered school operating system for Nigerian schools.',
+    description: 'School management software built for Nigerian schools.',
     images: [`${BASE_URL}/images/og-image.webp`],
   },
 
@@ -99,7 +99,7 @@ const jsonLd = {
   url: 'https://klassrun.com',
   logo: 'https://klassrun.com/images/logo.webp',
   description:
-    'The AI-powered school operating system for Nigerian schools — lesson notes, schemes of work, WAEC/NECO exam preparation, results, and parent portal, all built for the Nigerian curriculum.',
+    'School management software for Nigerian schools — lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees in one place.',
   foundingLocation: {
     '@type': 'Place',
     name: 'Nigeria',
@@ -108,6 +108,7 @@ const jsonLd = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
+    email: 'info@klassrun.com',
     availableLanguage: 'English',
   },
 }

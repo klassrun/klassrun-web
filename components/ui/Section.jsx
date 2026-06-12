@@ -1,27 +1,16 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { fadeUp, stagger, viewportOnce } from '@/lib/motion'
-
-export function Section({
-  id,
-  children,
-  className = '',
-  surface = 'base',
-  bleed = false,
-}) {
+// Layout primitives — motion-free. Surfaces map to the Afrilearn-style
+// alternating backgrounds: white → mint → navy → white.
+export function Section({ id, children, className = '', surface = 'base', bleed = false }) {
   const surfaceCls = {
     base: '',
-    elevated: 'bg-secondary/40',
-    floating: 'bg-white',
+    white: 'bg-white',
     muted: 'bg-secondary/30',
-  }[surface]
+    mint: 'bg-klassrun-mint',
+    navy: 'bg-klassrun-navy',
+  }[surface] ?? ''
 
   return (
-    <section
-      id={id}
-      className={`relative py-20 md:py-28 lg:py-32 ${surfaceCls} ${className}`}
-    >
+    <section id={id} className={`relative py-16 md:py-24 ${surfaceCls} ${className}`}>
       <div className={bleed ? '' : 'mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8'}>
         {children}
       </div>
@@ -29,39 +18,25 @@ export function Section({
   )
 }
 
-export function SectionHeader({ eyebrow, title, subtitle, align = 'center' }) {
-  const alignCls = align === 'center' ? 'text-center mx-auto' : 'text-left'
-
+export function SectionHeader({ title, subtitle, dark = false, className = '' }) {
   return (
-    <motion.div
-      variants={stagger(0, 0.1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={viewportOnce}
-      className={`max-w-2xl ${alignCls} mb-14 md:mb-20`}
-    >
-      {eyebrow && (
-        <motion.p
-          variants={fadeUp}
-          className="text-[11px] sm:text-xs font-semibold text-primary uppercase tracking-[0.18em] mb-4"
-        >
-          {eyebrow}
-        </motion.p>
-      )}
-      <motion.h2
-        variants={fadeUp}
-        className="text-[1.75rem] sm:text-4xl md:text-[2.75rem] font-semibold text-foreground leading-[1.1]"
+    <div className={`max-w-2xl mx-auto text-center mb-10 md:mb-14 ${className}`}>
+      <h2
+        className={`text-[1.75rem] sm:text-4xl md:text-[2.5rem] font-bold leading-[1.12] ${
+          dark ? 'text-white' : 'text-foreground'
+        }`}
       >
         {title}
-      </motion.h2>
+      </h2>
       {subtitle && (
-        <motion.p
-          variants={fadeUp}
-          className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed"
+        <p
+          className={`mt-4 text-base sm:text-lg leading-relaxed ${
+            dark ? 'text-white/70' : 'text-muted-foreground'
+          }`}
         >
           {subtitle}
-        </motion.p>
+        </p>
       )}
-    </motion.div>
+    </div>
   )
 }

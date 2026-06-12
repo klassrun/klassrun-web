@@ -8,5 +8,17 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 1,
     },
+    {
+      url: 'https://klassrun.com/privacy/',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: 'https://klassrun.com/terms/',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
   ]
 }

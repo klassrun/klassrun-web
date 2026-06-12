@@ -1,13 +1,12 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import CredStrip from '@/components/CredStrip'
-import About from '@/components/About'
-import Product from '@/components/Product'
-import HowItWorks from '@/components/HowItWorks'
+import FeatureTabs from '@/components/FeatureTabs'
+import Personas from '@/components/Personas'
+import WhyKlassrun from '@/components/WhyKlassrun'
 import Comparison from '@/components/Comparison'
 import Pricing from '@/components/Pricing'
+import Testimonials from '@/components/Testimonials'
 import FAQ from '@/components/FAQ'
-import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -15,14 +14,13 @@ export default function Home() {
     <main className="relative overflow-x-hidden">
       <Navbar />
       <Hero />
-      <CredStrip />
-      <About />
-      <Product />
-      <HowItWorks />
+      <FeatureTabs />
+      <Personas />
+      <WhyKlassrun />
       <Comparison />
       <Pricing />
+      <Testimonials />
       <FAQ />
-      <CTA />
       <Footer />
     </main>
   )

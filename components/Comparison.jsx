@@ -1,80 +1,134 @@
-'use client'
-
-// batch-web-os-comparison
 import { Check, X } from 'lucide-react'
-import { motion } from 'framer-motion'
 import { Section, SectionHeader } from './ui/Section'
-import { fadeUp, stagger, viewportOnce } from '@/lib/motion'
 
-const them = [
-  'Forgets your work the moment you close the tab',
-  'Generic answers, not tied to the NERDC week for your class',
-  'One person typing — no school, no roles, no records',
-  "Can't produce a Nigerian report card or run a CBT exam",
-  'Happily goes off-topic — not safe for a shared school account',
+// REVIEW BEFORE LAUNCH — every cell in the three competitor columns is a
+// claim about other products. Confirm each one yourself before this goes live.
+const COLUMNS = [
+  { key: 'klassrun', label: 'Klassrun', sub: null },
+  { key: 'chatbot', label: 'Generic AI chatbots', sub: '(ChatGPT, e.t.c)' },
+  { key: 'sms', label: 'School management software', sub: '(Edves, Educare, e.t.c)' },
+  { key: 'manual', label: 'Manual / paper process', sub: null },
 ]
 
-const us = [
-  'Remembers everything — notes, schemes and questions become a multi-year school asset',
-  'Aligned to the prescribed curriculum for that exact class, subject and term',
-  'Runs the whole school — teachers, results, report cards, attendance, fees, parents',
-  'Built-in Nigerian report cards, CBT exams, and a parent portal',
-  'Education-only guardrails — safe for principals, parents and inspectors',
+const ROWS = [
+  {
+    title: 'Writes lesson notes, schemes and exam questions',
+    sub: 'Complete drafts the teacher reviews and edits',
+    values: { klassrun: true, chatbot: true, sms: false, manual: false },
+  },
+  {
+    title: 'Tied to NERDC topics per class and term',
+    sub: 'The curriculum is built in — no copy-paste prompting',
+    values: { klassrun: true, chatbot: false, sms: false, manual: false },
+  },
+  {
+    title: 'School-owned question bank',
+    sub: 'Every question saved and reusable for years',
+    values: { klassrun: true, chatbot: false, sms: false, manual: false },
+  },
+  {
+    title: 'Nigerian report cards, computed and printed',
+    sub: 'Totals, grades and positions worked out for you',
+    values: { klassrun: true, chatbot: false, sms: true, manual: false },
+  },
+  {
+    title: 'Attendance, behaviour, promotions and fees together',
+    sub: 'Academic and money records in the same system',
+    values: { klassrun: true, chatbot: false, sms: true, manual: false },
+  },
+  {
+    title: 'One school account with owner, teacher and bursar roles',
+    sub: 'Everyone sees what their role allows',
+    values: { klassrun: true, chatbot: false, sms: true, manual: false },
+  },
 ]
+
+function Cell({ yes, highlighted }) {
+  return (
+    <td className={`px-4 py-5 text-center ${highlighted ? 'bg-klassrun-navy' : ''}`}>
+      <span className="inline-flex items-center gap-1.5">
+        <span
+          className={`h-5 w-5 rounded-full flex items-center justify-center ${
+            yes ? 'bg-primary/15' : 'bg-destructive/10'
+          }`}
+        >
+          {yes ? (
+            <Check size={12} className="text-primary" strokeWidth={3.5} />
+          ) : (
+            <X size={12} className="text-destructive" strokeWidth={3.5} />
+          )}
+        </span>
+        <span
+          className={`text-sm font-semibold ${
+            highlighted ? 'text-white' : 'text-foreground/75'
+          }`}
+        >
+          {yes ? 'Yes' : 'No'}
+        </span>
+      </span>
+    </td>
+  )
+}
 
 export default function Comparison() {
   return (
-    <Section id="why">
+    <Section id="compare" surface="mint">
       <SectionHeader
-        eyebrow="The honest question"
-        title={'\u201CWhy not just use ChatGPT?\u201D'}
-        subtitle="Because a chatbot is one teacher typing into a box that forgets tomorrow. Klassrun is built for the way a Nigerian school actually runs."
+        title="How we compare"
+        subtitle="Why Nigerian schools pick Klassrun"
       />
 
-      <motion.div
-        variants={stagger(0.1, 0.12)}
-        initial="hidden"
-        whileInView="show"
-        viewport={viewportOnce}
-        className="grid md:grid-cols-2 gap-5 md:gap-6 max-w-5xl mx-auto"
-      >
-        <motion.div
-          variants={fadeUp}
-          className="rounded-2xl border border-soft bg-white p-6 sm:p-8 shadow-xs"
-        >
-          <h3 className="text-base font-semibold text-foreground mb-6 tracking-tight">Generic chatbot</h3>
-          <ul className="space-y-4">
-            {them.map((t) => (
-              <li key={t} className="flex items-start gap-3">
-                <span className="mt-0.5 flex-shrink-0 h-5 w-5 rounded-full bg-destructive/10 flex items-center justify-center">
-                  <X size={12} className="text-destructive" strokeWidth={3} />
-                </span>
-                <span className="text-sm text-muted-foreground leading-relaxed">{t}</span>
-              </li>
+      <div className="overflow-x-auto rounded-2xl bg-white shadow-card">
+        <table className="w-full min-w-[820px] text-left border-collapse">
+          <thead>
+            <tr className="border-b border-soft">
+              <th className="px-5 py-5 text-sm font-bold text-foreground w-[30%]">Offerings</th>
+              {COLUMNS.map((col) => (
+                <th
+                  key={col.key}
+                  className={`px-4 py-5 text-center align-top ${
+                    col.key === 'klassrun' ? 'bg-klassrun-navy' : ''
+                  }`}
+                >
+                  <span
+                    className={`block text-sm font-bold leading-snug ${
+                      col.key === 'klassrun' ? 'text-white' : 'text-foreground'
+                    }`}
+                  >
+                    {col.label}
+                  </span>
+                  {col.sub && (
+                    <span className="block mt-1 text-[11px] font-normal text-muted-foreground">
+                      {col.sub}
+                    </span>
+                  )}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {ROWS.map((row, i) => (
+              <tr key={row.title} className={i < ROWS.length - 1 ? 'border-b border-subtle' : ''}>
+                <td className="px-5 py-5 align-top">
+                  <p className="text-sm font-bold text-foreground leading-snug">{row.title}</p>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{row.sub}</p>
+                </td>
+                {COLUMNS.map((col) => (
+                  <Cell
+                    key={col.key}
+                    yes={row.values[col.key]}
+                    highlighted={col.key === 'klassrun'}
+                  />
+                ))}
+              </tr>
             ))}
-          </ul>
-        </motion.div>
+          </tbody>
+        </table>
+      </div>
 
-        <motion.div
-          variants={fadeUp}
-          className="rounded-2xl ring-1 ring-primary/15 bg-primary/[0.06] p-6 sm:p-8 shadow-glow"
-        >
-          <h3 className="text-base font-semibold text-foreground mb-6 tracking-tight flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-primary" />
-            Klassrun
-          </h3>
-          <ul className="space-y-4">
-            {us.map((t) => (
-              <li key={t} className="flex items-start gap-3">
-                <span className="mt-0.5 flex-shrink-0 h-5 w-5 rounded-full bg-primary/15 flex items-center justify-center">
-                  <Check size={12} className="text-primary" strokeWidth={3} />
-                </span>
-                <span className="text-sm text-foreground/80 leading-relaxed">{t}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </motion.div>
+      <p className="mt-4 text-center text-xs text-muted-foreground sm:hidden">
+        Swipe sideways to see the full table
+      </p>
     </Section>
   )
 }
