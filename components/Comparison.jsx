@@ -1,12 +1,11 @@
 import { Check, X } from 'lucide-react'
 import { Section, SectionHeader } from './ui/Section'
 
-// REVIEW BEFORE LAUNCH — every cell in the three competitor columns is a
-// claim about other products. Confirm each one yourself before this goes live.
+// REVIEW BEFORE LAUNCH — every cell in the competitor columns is a claim
+// about other products. Confirm each one yourself before this goes live.
 const COLUMNS = [
   { key: 'klassrun', label: 'Klassrun', sub: null },
   { key: 'chatbot', label: 'Generic AI chatbots', sub: '(ChatGPT, e.t.c)' },
-  // { key: 'sms', label: 'School management software', sub: '(Edves, Educare, e.t.c)' },
   { key: 'manual', label: 'Manual / paper process', sub: null },
 ]
 
@@ -43,33 +42,6 @@ const ROWS = [
   },
 ]
 
-function Cell({ yes, highlighted }) {
-  return (
-    <td className={`px-4 py-5 text-center ${highlighted ? 'bg-klassrun-navy' : ''}`}>
-      <span className="inline-flex items-center gap-1.5">
-        <span
-          className={`h-5 w-5 rounded-full flex items-center justify-center ${
-            yes ? 'bg-primary/15' : 'bg-destructive/10'
-          }`}
-        >
-          {yes ? (
-            <Check size={12} className="text-primary" strokeWidth={3.5} />
-          ) : (
-            <X size={12} className="text-destructive" strokeWidth={3.5} />
-          )}
-        </span>
-        <span
-          className={`text-sm font-semibold ${
-            highlighted ? 'text-white' : 'text-foreground/75'
-          }`}
-        >
-          {yes ? 'Yes' : 'No'}
-        </span>
-      </span>
-    </td>
-  )
-}
-
 export default function Comparison() {
   return (
     <Section id="compare" surface="mint">
@@ -78,52 +50,73 @@ export default function Comparison() {
         subtitle="Why Nigerian schools pick Klassrun"
       />
 
-      <div className="overflow-x-auto rounded-2xl bg-white shadow-card">
-        <table className="w-full min-w-[820px] text-left border-collapse">
-          <thead>
-            <tr className="border-b border-soft">
-              <th className="px-5 py-5 text-sm font-bold text-foreground w-[30%]">Offerings</th>
-              {COLUMNS.map((col) => (
-                <th
-                  key={col.key}
-                  className={`px-4 py-5 text-center align-top ${
-                    col.key === 'klassrun' ? 'bg-klassrun-navy' : ''
-                  }`}
-                >
-                  <span
-                    className={`block text-sm font-bold leading-snug ${
-                      col.key === 'klassrun' ? 'text-white' : 'text-foreground'
+      <div className="overflow-x-auto">
+        <div className="min-w-[720px] rounded-2xl border border-soft bg-white overflow-hidden shadow-card">
+          <table className="w-full border-collapse text-left">
+            <thead>
+              <tr>
+                <th className="border border-soft px-5 py-4 text-sm font-bold text-foreground w-[34%]">
+                  Offerings
+                </th>
+                {COLUMNS.map((col) => (
+                  <th
+                    key={col.key}
+                    className={`border border-soft px-4 py-4 text-center align-top ${
+                      col.key === 'klassrun' ? 'bg-primary/5' : ''
                     }`}
                   >
-                    {col.label}
-                  </span>
-                  {col.sub && (
-                    <span className="block mt-1 text-[11px] font-normal text-muted-foreground">
-                      {col.sub}
+                    <span
+                      className={`block text-sm font-bold leading-snug ${
+                        col.key === 'klassrun' ? 'text-primary' : 'text-foreground'
+                      }`}
+                    >
+                      {col.label}
                     </span>
-                  )}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {ROWS.map((row, i) => (
-              <tr key={row.title} className={i < ROWS.length - 1 ? 'border-b border-subtle' : ''}>
-                <td className="px-5 py-5 align-top">
-                  <p className="text-sm font-bold text-foreground leading-snug">{row.title}</p>
-                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{row.sub}</p>
-                </td>
-                {COLUMNS.map((col) => (
-                  <Cell
-                    key={col.key}
-                    yes={row.values[col.key]}
-                    highlighted={col.key === 'klassrun'}
-                  />
+                    {col.sub && (
+                      <span className="block mt-0.5 text-[11px] font-normal text-muted-foreground">
+                        {col.sub}
+                      </span>
+                    )}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {ROWS.map((row) => (
+                <tr key={row.title}>
+                  <td className="border border-soft px-5 py-4 align-top">
+                    <p className="text-sm font-bold text-foreground leading-snug">{row.title}</p>
+                    <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{row.sub}</p>
+                  </td>
+                  {COLUMNS.map((col) => (
+                    <td
+                      key={col.key}
+                      className={`border border-soft px-4 py-4 text-center align-middle ${
+                        col.key === 'klassrun' ? 'bg-primary/5' : ''
+                      }`}
+                    >
+                      {row.values[col.key] ? (
+                        <Check
+                          size={18}
+                          className="inline-block text-primary"
+                          strokeWidth={3}
+                          aria-label="Yes"
+                        />
+                      ) : (
+                        <X
+                          size={18}
+                          className="inline-block text-destructive"
+                          strokeWidth={2.5}
+                          aria-label="No"
+                        />
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <p className="mt-4 text-center text-xs text-muted-foreground sm:hidden">
