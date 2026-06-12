@@ -79,7 +79,7 @@ export default function Footer() {
         <div className="mt-12 grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-10">
           {columns.map((col) => (
             <div key={col.title} className="md:col-span-2">
-              <h4 className="text-sm font-bold text-foreground mb-4">{col.title}</h4>
+              <h4 className="text-sm font-bold text-primary mb-4">{col.title}</h4>
               <ul className="space-y-3">
                 {col.links.map((link) => (
                   <li key={link.label}>
@@ -111,7 +111,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-foreground/40 hover:text-primary transition-colors duration-300"
+                className="text-primary hover:text-klassrun-green-dark transition-colors duration-300"
               >
                 <InstagramIcon size={18} />
               </a>
@@ -120,7 +120,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-foreground/40 hover:text-primary transition-colors duration-300"
+                className="text-primary hover:text-klassrun-green-dark transition-colors duration-300"
               >
                 <LinkedInIcon size={18} />
               </a>
@@ -129,19 +129,19 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="text-foreground/40 hover:text-primary transition-colors duration-300"
+                className="text-primary hover:text-klassrun-green-dark transition-colors duration-300"
               >
                 <TikTokIcon size={18} />
               </a>
             </div>
             <p className="flex md:justify-end items-center gap-2 text-sm text-muted-foreground">
-              <MapPin size={14} /> Lagos, Nigeria
+              <MapPin size={14} className="text-primary" /> Lagos, Nigeria
             </p>
             <a
               href="mailto:info@klassrun.com"
               className="mt-2 flex md:justify-end items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
             >
-              <Mail size={14} /> info@klassrun.com
+              <Mail size={14} className="text-primary" /> info@klassrun.com
             </a>
             <p className="mt-2 text-xs text-muted-foreground/70">
               Klassrun Technologies Ltd · RC 9463863

@@ -60,7 +60,7 @@
     --color-klassrun-green: oklch(0.65 0.178 145);
     --color-klassrun-green-dark: oklch(0.52 0.148 145);
     --color-klassrun-green-light: oklch(0.75 0.15 145);
-    --color-klassrun-navy: oklch(0.22 0.025 255);
+    --color-klassrun-navy: oklch(0.27 0.03 255);
     --color-klassrun-navy-light: oklch(0.30 0.02 255);
     /* Mint section background (new — Afrilearn-style sections) */
     --color-klassrun-mint: oklch(0.955 0.022 152);
@@ -233,6 +233,12 @@
     /* Hide horizontal scrollbars on tab rows / card rails */
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     .no-scrollbar::-webkit-scrollbar { display: none; }
+
+    /* Continuous testimonial rail */
+    @keyframes marquee {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
 
     /* Glassmorphism — true frosted glass that lets palette bleed through */
     .glass {

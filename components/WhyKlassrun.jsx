@@ -31,12 +31,12 @@ export default function WhyKlassrun() {
       <div className="grid sm:grid-cols-2 gap-x-12 gap-y-10 max-w-4xl mx-auto">
         {cards.map((c) => (
           <div key={c.title} className="flex items-start gap-5">
-            <span className="flex-shrink-0 h-12 w-12 rounded-xl bg-white/10 ring-1 ring-white/15 flex items-center justify-center">
+            <span className="flex-shrink-0 h-12 w-12 rounded-xl bg-white/15 ring-1 ring-white/25 flex items-center justify-center">
               <c.icon size={21} className="text-klassrun-green-light" />
             </span>
             <div>
               <h3 className="text-base sm:text-lg font-bold text-white">{c.title}</h3>
-              <p className="mt-1.5 text-sm text-white/70 leading-relaxed">{c.body}</p>
+              <p className="mt-1.5 text-sm text-white/75 leading-relaxed">{c.body}</p>
             </div>
           </div>
         ))}
