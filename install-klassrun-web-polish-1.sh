@@ -57,42 +57,42 @@ restore_all() {
 
 # ------------------------------------------- patch globals.css (exact match)
 say "Patching app/globals.css (lighter navy + marquee keyframes)"
-if ! python3 - << 'PYEOF'
-import sys
+if ! perl - app/globals.css << 'PLEOF'
+use strict; use warnings;
+my $path = shift;
+open my $fh, '<', $path or die "open: $!";
+binmode $fh;
+local $/; my $src = <$fh>; close $fh;
 
-path = 'app/globals.css'
-src = open(path, encoding='utf-8').read()
-
-patches = [
-    (
-        "    --color-klassrun-navy: oklch(0.22 0.025 255);",
-        "    --color-klassrun-navy: oklch(0.27 0.03 255);",
-    ),
-    (
-        "    .no-scrollbar::-webkit-scrollbar { display: none; }",
-        "    .no-scrollbar::-webkit-scrollbar { display: none; }\n"
-        "\n"
-        "    /* Continuous testimonial rail */\n"
-        "    @keyframes marquee {\n"
-        "        from { transform: translateX(0); }\n"
-        "        to { transform: translateX(-50%); }\n"
-        "    }",
-    ),
-]
+my @patches = (
+  ["    --color-klassrun-navy: oklch(0.22 0.025 255);",
+   "    --color-klassrun-navy: oklch(0.27 0.03 255);"],
+  ["    .no-scrollbar::-webkit-scrollbar { display: none; }",
+   "    .no-scrollbar::-webkit-scrollbar { display: none; }\n\n"
+   . "    /* Continuous testimonial rail */\n"
+   . "    \@keyframes marquee {\n"
+   . "        from { transform: translateX(0); }\n"
+   . "        to { transform: translateX(-50%); }\n"
+   . "    }"],
+);
 
 # verify ALL patches match exactly once BEFORE writing anything
-for old, _ in patches:
-    n = src.count(old)
-    if n != 1:
-        print(f"PATCH TARGET FOUND {n} TIMES (need exactly 1):\n{old}", file=sys.stderr)
-        sys.exit(1)
+for my $p (@patches) {
+  my $count = () = $src =~ /\Q$p->[0]\E/g;
+  die "PATCH TARGET FOUND $count TIMES (need exactly 1):\n$p->[0]\n" unless $count == 1;
+}
 
-for old, new in patches:
-    src = src.replace(old, new)
+for my $p (@patches) {
+  my $i = index($src, $p->[0]);
+  substr($src, $i, length($p->[0])) = $p->[1];
+}
 
-open(path, 'w', encoding='utf-8', newline='\n').write(src)
-print("globals.css patched: navy oklch(0.27 0.03 255) + marquee keyframes")
-PYEOF
+open my $out, '>', $path or die "write: $!";
+binmode $out;
+print {$out} $src;
+close $out;
+print "globals.css patched: navy oklch(0.27 0.03 255) + marquee keyframes\n";
+PLEOF
 then
   restore_all
   die "globals.css patch failed — repo restored, nothing committed."
