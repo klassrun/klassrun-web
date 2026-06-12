@@ -39,7 +39,7 @@ export default function Footer() {
             />
             <p className="mt-5 text-sm text-white/60 leading-relaxed max-w-sm">
               The AI-powered school operating system for Nigerian schools. Lesson notes,
-              exam prep, schemes of work, and academic oversight — built for the
+              exam prep, schemes of work, and academic oversight built for the
               Nigerian curriculum.
             </p>
             <p className="mt-5 text-xs text-white/40 tracking-wide">

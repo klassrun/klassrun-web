@@ -9,7 +9,7 @@ import { gridStagger, viewportOnce } from '@/lib/motion'
 const plans = [
   {
     name: 'Starter',
-    price: 40000,
+    price: '',
     period: '/term',
     description: 'For schools getting started with AI lesson planning.',
     features: [
@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: 'Standard',
-    price: 60000,
+    price: '',
     period: '/term',
     description: 'For schools running their whole term inside Klassrun.',
     features: [
@@ -43,7 +43,7 @@ const plans = [
   },
   {
     name: 'Premium',
-    price: 150000,
+    price: '',
     period: '/term',
     description: 'The full school operations platform.',
     features: [
@@ -63,7 +63,7 @@ const plans = [
 
 function formatPrice(price) {
   if (typeof price === 'number') {
-    return `₦${price.toLocaleString('en-NG')}`
+    // return `₦${price.toLocaleString('en-NG')}`
   }
   return price
 }

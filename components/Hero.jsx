@@ -20,21 +20,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[92vh] flex items-center pt-28 sm:pt-32 md:pt-28 overflow-hidden">
-      {/* Background atmosphere */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[640px] h-[640px] bg-primary/[0.06] rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[440px] h-[440px] bg-primary/[0.05] rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
-        <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 1px 1px, oklch(0.22 0.025 255 / 0.06) 1px, transparent 0)',
-            backgroundSize: '32px 32px',
-            maskImage:
-              'radial-gradient(ellipse at center, black 40%, transparent 75%)',
-          }}
-        />
-      </div>
+      {/* Background: plain white */}
 
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -78,8 +64,8 @@ export default function Hero() {
               className="mt-5 sm:mt-6 text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl"
             >
               Klassrun is the AI-powered operating system for Nigerian schools. Run your
-              academics from one place — lesson notes, schemes of work, and WAEC/NECO
-              exam prep — with results, attendance, and parent portal coming as you grow.
+              academics from one place, lesson notes, schemes of work, and WAEC/NECO
+              exam prep, with results, attendance, and parent portal coming as you grow.
             </motion.p>
 
             <motion.div
@@ -132,11 +118,7 @@ export default function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.2 }}
             className="lg:col-span-5 relative"
           >
-            <MotionCard
-              entrance="none"
-              intensity={6}
-              lift={2}
-              className="rounded-2xl bg-surface-elevated border border-soft p-2 shadow-hero"
+            <div className="rounded-2xl p-2"
             >
               <div className="flex items-center gap-2 px-4 py-3 border-b border-subtle">
                 <div className="flex gap-1.5">
@@ -203,7 +185,7 @@ export default function Hero() {
                   ))}
                 </div>
               </div>
-            </MotionCard>
+            </div>
 
             <motion.div
               initial={{ opacity: 0, x: -16, y: 16 }}
