@@ -6,7 +6,7 @@ import { Section, SectionHeader } from './ui/Section'
 const COLUMNS = [
   { key: 'klassrun', label: 'Klassrun', sub: null },
   { key: 'chatbot', label: 'Generic AI chatbots', sub: '(ChatGPT, e.t.c)' },
-  { key: 'sms', label: 'School management software', sub: '(Edves, Educare, e.t.c)' },
+  // { key: 'sms', label: 'School management software', sub: '(Edves, Educare, e.t.c)' },
   { key: 'manual', label: 'Manual / paper process', sub: null },
 ]
 
@@ -14,32 +14,32 @@ const ROWS = [
   {
     title: 'Writes lesson notes, schemes and exam questions',
     sub: 'Complete drafts the teacher reviews and edits',
-    values: { klassrun: true, chatbot: true, sms: false, manual: false },
+    values: { klassrun: true, chatbot: true, manual: false },
   },
   {
     title: 'Tied to NERDC topics per class and term',
     sub: 'The curriculum is built in — no copy-paste prompting',
-    values: { klassrun: true, chatbot: false, sms: false, manual: false },
+    values: { klassrun: true, chatbot: false, manual: false },
   },
   {
     title: 'School-owned question bank',
     sub: 'Every question saved and reusable for years',
-    values: { klassrun: true, chatbot: false, sms: false, manual: false },
+    values: { klassrun: true, chatbot: false, manual: false },
   },
   {
     title: 'Nigerian report cards, computed and printed',
     sub: 'Totals, grades and positions worked out for you',
-    values: { klassrun: true, chatbot: false, sms: true, manual: false },
+    values: { klassrun: true, chatbot: false, manual: false },
   },
   {
     title: 'Attendance, behaviour, promotions and fees together',
     sub: 'Academic and money records in the same system',
-    values: { klassrun: true, chatbot: false, sms: true, manual: false },
+    values: { klassrun: true, chatbot: false, manual: false },
   },
   {
     title: 'One school account with owner, teacher and bursar roles',
     sub: 'Everyone sees what their role allows',
-    values: { klassrun: true, chatbot: false, sms: true, manual: false },
+    values: { klassrun: true, chatbot: false, manual: false },
   },
 ]
 
