@@ -5,7 +5,7 @@ const bullets = [
   { verb: 'Set', rest: ' WAEC-style exam questions from a question bank your school owns' },
   { verb: 'Compute', rest: ' results and print proper Nigerian report cards' },
   { verb: 'Track', rest: ' attendance, behaviour and promotions in one place' },
-  { verb: 'Mark', rest: ' fees paid or unpaid — your bursar sees everything at a glance' },
+  { verb: 'Mark', rest: ' fees paid or unpaid, so your bursar sees everything at a glance' },
 ]
 
 export default function Hero() {
@@ -13,7 +13,7 @@ export default function Hero() {
     <section className="relative pt-28 sm:pt-32 pb-12 md:pb-20 overflow-hidden bg-white">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          {/* Left — copy */}
+          {/* Left - copy */}
           <div className="lg:col-span-7">
             <h1 className="text-[2.25rem] sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.06] text-foreground">
               Run your whole school{' '}
@@ -55,7 +55,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right — static product mockup (illustration, no live data) */}
+          {/* Right - static product mockup (illustration, no live data) */}
           <div className="lg:col-span-5 relative">
             <div className="rounded-2xl border border-soft bg-white shadow-lift overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 border-b border-subtle">

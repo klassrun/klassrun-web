@@ -61,7 +61,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right side — Get Started stays visible on every screen size */}
+          {/* Right side - Get Started stays visible on every screen size */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="https://app.klassrun.com"

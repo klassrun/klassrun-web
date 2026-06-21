@@ -62,7 +62,7 @@
     --color-klassrun-green-light: oklch(0.75 0.15 145);
     --color-klassrun-navy: oklch(0.27 0.03 255);
     --color-klassrun-navy-light: oklch(0.30 0.02 255);
-    /* Mint section background (new - Afrilearn-style sections) */
+    /* Mint section background (new — Afrilearn-style sections) */
     --color-klassrun-mint: oklch(0.955 0.022 152);
 }
 
@@ -240,7 +240,7 @@
         to { transform: translateX(-50%); }
     }
 
-    /* Glassmorphism - true frosted glass that lets palette bleed through */
+    /* Glassmorphism — true frosted glass that lets palette bleed through */
     .glass {
         background-color: oklch(1 0 0 / 0.55);
         backdrop-filter: saturate(180%) blur(14px);

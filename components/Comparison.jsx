@@ -4,7 +4,7 @@ import { Section, SectionHeader } from './ui/Section'
 export default function Comparison() {
   return (
     <Section id="compare" surface="mint">
-      <SectionHeader title="How we compare" subtitle="Why Nigerian schools pick Klassrun" />
+      <SectionHeader title="How we compare" subtitle="Klassrun vs a chatbot vs a stack of paper" />
 
       <div className="mx-auto max-w-5xl">
         <Image

@@ -4,7 +4,7 @@ import LoadingSplash from '@/components/LoadingSplash'
 
 const BASE_URL = 'https://klassrun.com'
 
-// ── VIEWPORT (separated from metadata — required in Next.js 14+) ──
+// VIEWPORT (separated from metadata, required in Next.js 14+)
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -15,11 +15,11 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    default: 'Klassrun — School Management Software for Nigerian Schools',
+    default: 'Klassrun | School Management Software for Nigerian Schools',
     template: '%s | Klassrun Technologies',
   },
   description:
-    'Run your school from one place. Lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees — with AI lesson note and exam question generation. Built for Nigerian schools.',
+    'Run your school from one place. Lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees, with AI lesson note and exam question generation. Built for Nigerian schools.',
   keywords: [
     'EdTech Nigeria',
     'lesson note generator Nigeria',
@@ -41,7 +41,7 @@ export const metadata = {
     locale: 'en_NG',
     url: BASE_URL,
     siteName: 'Klassrun Technologies Ltd',
-    title: 'Klassrun — School Management Software for Nigerian Schools',
+    title: 'Klassrun | School Management Software for Nigerian Schools',
     description:
       'Run your school from one place. Lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees. Built for Nigerian schools.',
     images: [
@@ -99,7 +99,7 @@ const jsonLd = {
   url: 'https://klassrun.com',
   logo: 'https://klassrun.com/images/logo.webp',
   description:
-    'School management software for Nigerian schools — lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees in one place.',
+    'School management software for Nigerian schools: lesson notes, schemes of work, WAEC-style exam questions, results, report cards, attendance and fees in one place.',
   foundingLocation: {
     '@type': 'Place',
     name: 'Nigeria',

@@ -6,44 +6,44 @@ import { Section, SectionHeader } from './ui/Section'
 
 const faqs = [
   {
-    q: 'What does Klassrun do?',
-    a: 'Klassrun runs your school’s academics and records from one place. Teachers generate lesson notes, schemes of work and WAEC-style exam questions; the school manages results, report cards, attendance, behaviour, promotions and fees — all under one account with separate roles for owners, teachers and bursars.',
+    q: 'What does Klassrun actually do?',
+    a: 'It runs your school\'s academics and records from one place. Teachers generate lesson notes, schemes of work and WAEC-style exam questions. The school handles results, report cards, attendance, behaviour, promotions and fees. All of it sits under one account, with separate logins for owners, teachers and bursars.',
   },
   {
-    q: 'How much does Klassrun cost?',
-    a: 'Plans are billed per term — Starter, Standard and Premium — because that’s how Nigerian schools budget. Final amounts are being announced soon. The 14-day free trial is open now, no card required, so you can try everything before pricing lands.',
+    q: 'What does it cost?',
+    a: 'You pay per term, in one of three plans: Starter, Standard or Premium. That\'s how Nigerian schools budget, so that\'s how we priced it. Final amounts are announced soon. The 14-day free trial is open now with no card, so you can try the whole thing before a single naira changes hands.',
   },
   {
     q: 'How do we get started?',
-    a: 'The admin creates the school account, sets up classes and subjects, and invites teachers — it takes under ten minutes. Teachers can start generating lesson notes the same day. No training sessions, no setup fee.',
+    a: 'The admin creates the account, sets up classes and subjects, and invites the teachers. The whole thing takes under ten minutes. Teachers can generate their first lesson note the same day. No training session. No setup fee.',
   },
   {
-    q: 'Is the content aligned to the Nigerian curriculum?',
-    a: 'Yes. Lesson notes and schemes follow NERDC topics for each class, subject and term, and exam questions come in WAEC, NECO and BECE style with marking guides.',
+    q: 'Is it aligned to the Nigerian curriculum?',
+    a: 'Yes. Lesson notes and schemes follow NERDC topics for each class, subject and term. Exam questions come in WAEC, NECO and BECE style, with marking guides included.',
   },
   {
-    q: 'Which features are live right now?',
+    q: 'What\'s live right now?',
     a: 'Live today: lesson notes, schemes of work, exam questions, the school question bank, results and report card printing, attendance and behaviour records, promotions, and fee tracking with a bursar role. Coming soon: the parent and student portal, CBT exams, online fee payments through Paystack, and WhatsApp notifications.',
   },
   {
-    q: 'How is this different from just using ChatGPT?',
-    a: 'A chatbot answers one person, then forgets. Klassrun is built for the whole school: the curriculum for each class and term is already loaded, every note and question is saved into a bank your school owns and reuses for years, and the same system handles results, report cards, attendance and fees — things a chatbot can’t do.',
+    q: 'Why not just use ChatGPT?',
+    a: 'A chatbot answers one teacher, then forgets the conversation. Klassrun was built for the whole school. The curriculum for every class and term is already loaded. Every note and question you make is saved into a bank your school owns and reuses for years. And the same system runs your results, report cards, attendance and fees. A chatbot does none of that.',
   },
   {
     q: 'Do I need to install anything?',
-    a: 'No. Klassrun runs in the browser on any device — laptop, tablet or phone — and can be installed to your home screen like an app.',
+    a: 'No. It runs in the browser on a laptop, tablet or phone, and you can add it to your home screen like an app if you want to.',
   },
   {
-    q: 'Is my school’s data private?',
-    a: 'Yes. Every school operates in its own isolated space — your students, results, fee records and question bank are never shared with another school. The details are in our Privacy Policy, linked in the footer.',
+    q: 'Is my school\'s data private?',
+    a: 'Yes. Every school runs in its own walled-off space. Your students, results, fee records and question bank never touch another school\'s. The full details are in our Privacy Policy, linked below.',
   },
   {
-    q: 'Can my bursar use it without seeing teaching tools?',
-    a: 'Yes. Klassrun has separate roles: owners and admins see the whole school, teachers see their classes and content tools, and bursars get their own login focused on fees.',
+    q: 'Can my bursar use it without seeing the teaching tools?',
+    a: 'Yes. The roles are separate by design. Owners and admins see the whole school. Teachers see their classes and their content tools. Bursars get a login built around fees and nothing else.',
   },
   {
-    q: 'What happens after the free trial?',
-    a: 'You pick a plan and continue — nothing is deleted. Everything your teachers created during the trial stays in your school’s account.',
+    q: 'What happens when the free trial ends?',
+    a: 'You pick a plan and keep going. Nothing gets wiped. Everything your teachers built during the trial stays right where it is, in your school\'s account.',
   },
 ]
 
@@ -52,7 +52,7 @@ export default function FAQ() {
 
   return (
     <Section id="faq" surface="white">
-      <SectionHeader title="Frequently asked questions" />
+      <SectionHeader title="Questions schools ask us" />
       <div className="max-w-3xl mx-auto">
         {faqs.map((f, i) => {
           const isOpen = open === i

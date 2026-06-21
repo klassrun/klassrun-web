@@ -1,12 +1,12 @@
 # Klassrun Technologies Ltd
 
-> The AI-powered school operating system for Nigerian schools. One platform for lesson notes, schemes of work, WAEC/NECO exam preparation, results, parent portal, and academic oversight - built for the Nigerian curriculum.
+> The AI-powered school operating system for Nigerian schools. One platform for lesson notes, schemes of work, WAEC/NECO exam preparation, results, parent portal, and academic oversight — built for the Nigerian curriculum.
 
 ## About
 
 Klassrun Technologies Ltd is a CAC-registered EdTech company (RC 9463863) incorporated in Lagos, Nigeria on April 3, 2026. The company builds Klassrun, an AI-powered school operating system for Nigerian private primary and secondary schools.
 
-Klassrun is positioned as a complete School OS - not a lesson note generator. The AI-powered academic engine (lesson notes, schemes of work, exam questions) is the wedge; results management, parent portal, attendance, fees, and school operations follow as schools adopt the platform.
+Klassrun is positioned as a complete School OS — not a lesson note generator. The AI-powered academic engine (lesson notes, schemes of work, exam questions) is the wedge; results management, parent portal, attendance, fees, and school operations follow as schools adopt the platform.
 
 ## Positioning
 
@@ -22,28 +22,28 @@ Klassrun replaces all of this with one AI-powered platform.
 
 ## Product Capabilities
 
-### Tier S - AI Academic Core (Phase 1)
-- AI Lesson Note Generator - curriculum-aligned, generated in under 60 seconds
-- Scheme of Work Generator - full 12-week termly schemes per subject and class
-- Exam Question Generator - WAEC, NECO, GCE, BECE style with configurable difficulty
-- School Question Bank with deduplication - never repeat exam questions
-- Education-only AI guardrails - restricted to academic tasks only
+### Tier S — AI Academic Core (Phase 1)
+- AI Lesson Note Generator — curriculum-aligned, generated in under 60 seconds
+- Scheme of Work Generator — full 12-week termly schemes per subject and class
+- Exam Question Generator — WAEC, NECO, GCE, BECE style with configurable difficulty
+- School Question Bank with deduplication — never repeat exam questions
+- Education-only AI guardrails — restricted to academic tasks only
 - Curriculum alignment to NERDC, WAEC, NECO standards
 
-### Tier A - Platform Foundation (Phase 1)
-- Multi-tenant SaaS architecture - each school on their own subdomain
+### Tier A — Platform Foundation (Phase 1)
+- Multi-tenant SaaS architecture — each school on their own subdomain
 - Per-school branding (logo, color, letterhead on PDFs)
 - Subscription billing via Paystack (14-day free trial)
 - Roles: Super Admin, School Admin, Teacher
 
-### Tier B - Sticky Operations (Phase 2)
+### Tier B — Sticky Operations (Phase 2)
 - Results and grading system with PDF report cards
 - AI-generated report card comments
 - Parent portal with magic-link auth
 - Attendance management
 - Student management (admissions, profiles, transfers)
 
-### Tier C - Full School Operations (Phase 3)
+### Tier C — Full School Operations (Phase 3)
 - Fees and payment management with Account Officer role
 - SMS, WhatsApp, email notifications
 - Staff management (HR)
@@ -52,7 +52,7 @@ Klassrun replaces all of this with one AI-powered platform.
 - Document management
 - Reporting and analytics
 
-### Tier D / E - On-Demand Modules (Phase 4)
+### Tier D / E — On-Demand Modules (Phase 4)
 - Hostel, transport, library, inventory, accounting modules
 - Advanced AI: performance analysis, dropout prediction, smart admission ranking
 
@@ -65,10 +65,10 @@ Klassrun replaces all of this with one AI-powered platform.
 
 ## Architecture
 
-- klassrun.com - marketing site (this site)
-- app.klassrun.com - authentication, super admin, school portal entry
-- {school-slug}.klassrun.com - individual school portals
-- api.klassrun.com - backend API (Node.js, Express, PostgreSQL, Prisma)
+- klassrun.com — marketing site (this site)
+- app.klassrun.com — authentication, super admin, school portal entry
+- {school-slug}.klassrun.com — individual school portals
+- api.klassrun.com — backend API (Node.js, Express, PostgreSQL, Prisma)
 
 Multi-tenancy is enforced at the data layer via scoped Prisma client. Each school's data is isolated by schoolId in every query.
 
@@ -91,8 +91,8 @@ Phase 1 in active build. Multi-tenant foundation, schema, and AI integration in 
 
 ## Leadership
 
-- Adegbite Muhammed Adedamola - Co-founder & CEO
-- Afeez Temitope Bello - Co-founder & CTO
+- Adegbite Muhammed Adedamola — Co-founder & CEO
+- Afeez Temitope Bello — Co-founder & CTO
 
 ## Company Details
 

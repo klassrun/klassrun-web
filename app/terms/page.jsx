@@ -1,4 +1,4 @@
-// DRAFT — written from how Klassrun actually works today. Have a lawyer
+// DRAFT - written from how Klassrun actually works today. Have a lawyer
 // review before relying on it.
 import Image from 'next/image'
 import Link from 'next/link'
@@ -73,8 +73,8 @@ export default function TermsPage() {
 
         <H2>6. Fees and billing</H2>
         <P>
-          Plans are billed per term. Current amounts are communicated before any charge — there are
-          no hidden fees. New accounts start with a 14-day free trial with no card required. If a
+          Plans are billed per term. Current amounts are communicated before any charge, and there
+          are no hidden fees. New accounts start with a 14-day free trial with no card required. If a
           school does not continue after the trial or a paid term, access is paused but records are
           not immediately deleted.
         </P>

@@ -5,22 +5,22 @@ const cards = [
   {
     icon: Layers,
     title: 'Everything in one place',
-    body: 'Lesson notes, exams, results, report cards, attendance and fees under one login. No more juggling templates, folders and WhatsApp groups.',
+    body: 'No more juggling templates, folders and WhatsApp groups. Lesson notes, exams, results, report cards, attendance and fees all sit under one login.',
   },
   {
     icon: MapPin,
-    title: 'Built for Nigerian schools',
-    body: 'Three-term calendar, NERDC topics, WAEC-style questions, proper Nigerian report cards and naira pricing. Not a foreign tool squeezed to fit.',
+    title: 'Built here, for here',
+    body: 'Three-term calendar. NERDC topics. WAEC-style questions. Real Nigerian report cards. Prices in naira. This wasn’t a foreign tool bent to fit. It was built for your school from the start.',
   },
   {
     icon: PenLine,
-    title: 'Notes and exams, written for you',
-    body: 'Klassrun’s AI drafts complete lesson notes and exam questions from the curriculum topic. Teachers review, edit and teach — Sunday nights belong to them again.',
+    title: 'The writing’s already done',
+    body: 'Klassrun drafts the full lesson note and the exam questions from the topic. Your teachers read, adjust and teach. The Sunday-night scramble is over.',
   },
   {
     icon: MonitorSmartphone,
-    title: 'Works where schools work',
-    body: 'Runs in the browser on any device, installs like an app, and is built to cope with slow connections.',
+    title: 'Works on whatever you’ve got',
+    body: 'Any browser. Any device. Installs like an app. And it doesn’t fall over when the network is slow, because we built it knowing it wouldn’t always be fast.',
   },
 ]
 

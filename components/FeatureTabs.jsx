@@ -14,7 +14,7 @@ const TABS = [
     icon: FileText,
     title: 'Complete lesson notes in minutes',
     body:
-      'Pick the class, subject and topic. Klassrun’s AI writes a full lesson note in the format Nigerian schools submit — objectives, content, evaluation. The teacher reviews, edits and prints.',
+      'Pick the class, subject and topic. Klassrun’s AI writes a full lesson note in the format Nigerian schools submit, covering objectives, content and evaluation. The teacher reviews, edits and prints.',
     points: ['NERDC topics built in', 'Edit everything before you print', 'Export as PDF'],
     rows: [
       { a: 'Basic Science · JSS 1', b: 'Lesson Note', chip: 'Ready' },
@@ -31,9 +31,9 @@ const TABS = [
       'Generate the whole term week by week, matched to the three-term calendar. Submit it once, reuse it next session, and keep every class on the same page.',
     points: ['Week-by-week breakdown', 'Matches the three-term calendar', 'Reuse next session'],
     rows: [
-      { a: 'First Term · Week 1–13', b: 'Mathematics, JSS 2', chip: 'Complete' },
-      { a: 'Second Term · Week 1–12', b: 'Basic Science, JSS 1', chip: 'Complete' },
-      { a: 'Third Term · Week 1–11', b: 'English, SS 1', chip: 'In use' },
+      { a: 'First Term · Week 1-13', b: 'Mathematics, JSS 2', chip: 'Complete' },
+      { a: 'Second Term · Week 1-12', b: 'Basic Science, JSS 1', chip: 'Complete' },
+      { a: 'Third Term · Week 1-11', b: 'English, SS 1', chip: 'In use' },
     ],
   },
   {
@@ -42,7 +42,7 @@ const TABS = [
     icon: ClipboardCheck,
     title: 'WAEC-style questions, saved to your bank',
     body:
-      'Generate objective and theory questions in WAEC style, with marking guides. Every question goes into a private bank your school owns — so you never set the same paper twice.',
+      'Generate objective and theory questions in WAEC style, with marking guides. Every question goes into a private bank your school owns, so you never set the same paper twice.',
     points: ['Objective and theory formats', 'Marking guides included', 'School-owned question bank'],
     rows: [
       { a: 'SS 1 English · 50 objectives', b: 'First C.A.', chip: 'In bank' },
@@ -98,7 +98,7 @@ const TABS = [
     icon: Sparkles,
     title: 'On the roadmap',
     body:
-      'These ship next, and your plan includes them as they land. No upgrade gymnastics — they appear in your school’s account when ready.',
+      'These ship next, and your plan includes them as they land. No upgrade gymnastics. They appear in your school’s account when ready.',
     points: [],
     roadmap: [
       { title: 'Parent & Student Portal', body: 'Parents see results, attendance and fees from home.' },
@@ -118,7 +118,7 @@ export default function FeatureTabs() {
     <Section id="features" surface="white">
       <SectionHeader
         title="Everything your school runs on, in one place"
-        subtitle="Lesson notes, exams, results, fees and attendance — one login for the whole school."
+        subtitle="Lesson notes, exams, results, fees and attendance. One login for the whole school."
       />
 
       {/* Pill tab row */}

@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 import { Section, SectionHeader } from './ui/Section'
 
-// PLACEHOLDER — replace each persona's `quote` with a real quote from a real
+// PLACEHOLDER - replace each persona's `quote` with a real quote from a real
 // school before launch. They render exactly as written below, so the bracketed
 // text is intentionally impossible to mistake for a real testimonial.
 const PERSONAS = [
@@ -22,9 +22,9 @@ const PERSONAS = [
       { icon: Wallet, text: 'Know who has paid fees and who hasn’t, at a glance.' },
       { icon: ArrowUpDown, text: 'Handle end-of-term promotions without shuffling paper.' },
       { icon: ClipboardList, text: 'Keep attendance and behaviour records that follow each student.' },
-      { icon: Users, text: 'One school account — owners, teachers and bursars each get their own role.' },
+      { icon: Users, text: 'One school account. Owners, teachers and bursars each get their own role.' },
     ],
-    quote: '[PLACEHOLDER — quote from a real school owner goes here]',
+    quote: '[PLACEHOLDER - quote from a real school owner goes here]',
     attribution: '[Name, School, Location]',
   },
   {
@@ -35,11 +35,11 @@ const PERSONAS = [
       { icon: FileText, text: 'Write a complete lesson note in minutes, not hours.' },
       { icon: CalendarDays, text: 'Generate a full scheme of work for the term, week by week.' },
       { icon: ClipboardCheck, text: 'Set WAEC-style exam questions and keep them in your own bank.' },
-      { icon: Calculator, text: 'Enter CA and exam scores — totals and grades compute themselves.' },
+      { icon: Calculator, text: 'Enter CA and exam scores. Totals and grades compute themselves.' },
       { icon: Smartphone, text: 'Take attendance from your phone in seconds.' },
       { icon: RefreshCw, text: 'Reuse and edit everything you’ve made, any term, any session.' },
     ],
-    quote: '[PLACEHOLDER — quote from a real teacher goes here]',
+    quote: '[PLACEHOLDER - quote from a real teacher goes here]',
     attribution: '[Name, Role, School]',
   },
   {
@@ -52,9 +52,9 @@ const PERSONAS = [
       { icon: Table, text: 'Fee records tied to each student’s profile, term by term.' },
       { icon: Lock, text: 'Your own bursar login, separate from the teaching tools.' },
       { icon: BarChart3, text: 'Spot outstanding balances per class before the term ends.' },
-      { icon: CreditCard, text: 'Online payments through Paystack — coming soon.', soon: true },
+      { icon: CreditCard, text: 'Online payments through Paystack.', soon: true },
     ],
-    quote: '[PLACEHOLDER — quote from a real bursar goes here]',
+    quote: '[PLACEHOLDER - quote from a real bursar goes here]',
     attribution: '[Name, School]',
   },
 ]
@@ -107,14 +107,14 @@ export default function Personas() {
         ))}
       </div>
 
-      {/* Pull-quote between hairlines — PLACEHOLDER until a real quote exists */}
+      {/* Pull-quote between hairlines - PLACEHOLDER until a real quote exists */}
       <div className="max-w-3xl mx-auto mt-12 md:mt-16">
         <div className="border-t border-soft" />
         <blockquote className="py-7 text-center">
           <p className="text-base sm:text-lg italic text-foreground/80 leading-relaxed">
             “{p.quote}”
           </p>
-          <footer className="mt-3 text-sm text-muted-foreground">— {p.attribution}</footer>
+          <footer className="mt-3 text-sm text-muted-foreground">{p.attribution}</footer>
         </blockquote>
         <div className="border-t border-soft" />
       </div>

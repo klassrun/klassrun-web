@@ -1,22 +1,22 @@
 import { Quote, ArrowRight } from 'lucide-react'
 import { Section, SectionHeader } from './ui/Section'
 
-// PLACEHOLDER — replace with real quotes from real schools before launch.
+// PLACEHOLDER - replace with real quotes from real schools before launch.
 // Add up to 15 entries; the rail scrolls continuously and loops on its own,
 // showing about 3 cards at a time on desktop. Do NOT invent names here.
 const quotes = [
   {
-    quote: '[PLACEHOLDER — real quote from a pilot school goes here]',
+    quote: '[PLACEHOLDER - real quote from a pilot school goes here]',
     name: '[Name Surname]',
     role: '[Role, School]',
   },
   {
-    quote: '[PLACEHOLDER — real quote from a teacher goes here]',
+    quote: '[PLACEHOLDER - real quote from a teacher goes here]',
     name: '[Name Surname]',
     role: '[Role, School]',
   },
   {
-    quote: '[PLACEHOLDER — real quote from a school owner goes here]',
+    quote: '[PLACEHOLDER - real quote from a school owner goes here]',
     name: '[Name Surname]',
     role: '[Role, School]',
   },
@@ -47,7 +47,7 @@ export default function Testimonials() {
                     {q.quote}
                   </blockquote>
                   <figcaption className="mt-5 text-sm italic text-muted-foreground">
-                    — {q.name}, {q.role}
+                    {q.name}, {q.role}
                   </figcaption>
                 </figure>
               ))}

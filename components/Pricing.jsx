@@ -1,12 +1,12 @@
 import { Check } from 'lucide-react'
 import { Section, SectionHeader } from './ui/Section'
 
-// Final amounts are not announced yet — every tier shows "Coming soon".
+// Final amounts are not announced yet - every tier shows "Coming soon".
 // REVIEW the feature split across tiers before launch.
 const plans = [
   {
     name: 'Starter',
-    description: 'For schools getting started with faster lesson planning.',
+    description: 'For schools that just want lesson planning off their plate.',
     features: [
       { text: 'Lesson note generation', soon: false },
       { text: 'Scheme of work generation', soon: false },
@@ -19,12 +19,12 @@ const plans = [
   },
   {
     name: 'Standard',
-    description: 'For schools running their whole term inside Klassrun.',
+    description: 'For schools ready to run the whole term inside Klassrun.',
     features: [
       { text: 'Everything in Starter', soon: false },
       { text: 'Exam question generation', soon: false },
       { text: 'School question bank (never repeat questions)', soon: false },
-      { text: 'Upload your scheme → matching lesson notes', soon: true },
+      { text: 'Upload your scheme and get matching lesson notes', soon: true },
       { text: 'PDF export with school branding', soon: true },
       { text: 'Usage analytics', soon: true },
       { text: 'Up to 30 teachers', soon: false },
@@ -36,7 +36,7 @@ const plans = [
   },
   {
     name: 'Premium',
-    description: 'The full school operations platform.',
+    description: 'The whole school, end to end.',
     features: [
       { text: 'Everything in Standard', soon: false },
       { text: 'Results & report cards', soon: false },
@@ -58,7 +58,7 @@ export default function Pricing() {
     <Section id="pricing" surface="white">
       <SectionHeader
         title="Simple, termly pricing"
-        subtitle="Pay per term — the way Nigerian schools budget. Final amounts are coming soon; the free trial is open now."
+        subtitle="Pay per term, the way Nigerian schools budget. Final amounts are coming soon, and the free trial is open now."
       />
 
       <div className="text-center mb-10 sm:mb-12">
@@ -152,7 +152,7 @@ export default function Pricing() {
           <a href="mailto:info@klassrun.com" className="text-primary font-bold hover:underline underline-offset-4">
             Contact us
           </a>{' '}
-          — we’ll quote and plan with you directly.
+          and we’ll quote and plan with you directly.
         </p>
       </div>
     </Section>

@@ -1,4 +1,4 @@
-// DRAFT — written from how Klassrun actually works today. Have a lawyer
+// DRAFT - written from how Klassrun actually works today. Have a lawyer
 // review before relying on it, especially around students' records (NDPA).
 import Image from 'next/image'
 import Link from 'next/link'
@@ -47,23 +47,23 @@ export default function PrivacyPage() {
         <P>We only hold the information needed to run the service:</P>
         <ul className="list-disc pl-5 mb-4">
           <LI>
-            <strong className="text-foreground">School and staff details</strong> — the school’s
+            <strong className="text-foreground">School and staff details:</strong> the school’s
             name, and the names, email addresses and roles of staff accounts the school creates
             (owner, teacher, bursar).
           </LI>
           <LI>
-            <strong className="text-foreground">Student academic records entered by the school</strong>{' '}
-            — student names, classes, scores, attendance, behaviour assessments, promotion records
+            <strong className="text-foreground">Student academic records entered by the school:</strong>{' '}
+            student names, classes, scores, attendance, behaviour assessments, promotion records
             and fee status. The school enters and controls this information; we process it on the
             school’s behalf.
           </LI>
           <LI>
-            <strong className="text-foreground">Content the school creates</strong> — lesson notes,
+            <strong className="text-foreground">Content the school creates:</strong> lesson notes,
             schemes of work and exam questions generated or edited in the app, stored in the
             school’s own private space.
           </LI>
           <LI>
-            <strong className="text-foreground">Basic technical logs</strong> — standard records of
+            <strong className="text-foreground">Basic technical logs:</strong> standard records of
             requests to our servers, used for security and to keep the service running.
           </LI>
         </ul>
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
         <H2>Where information is stored and how it is protected</H2>
         <P>
           Information is stored with reputable cloud hosting providers. Each school operates in its
-          own isolated space — one school’s students, results, fee records and question bank are
+          own isolated space, so one school’s students, results, fee records and question bank are
           never visible to another school. Access within a school is controlled by roles set by the
           school’s owner or admin.
         </P>
@@ -125,8 +125,8 @@ export default function PrivacyPage() {
           Questions about privacy: email{' '}
           <a href="mailto:info@klassrun.com" className="text-primary font-semibold hover:underline">
             info@klassrun.com
-          </a>{' '}
-          — Klassrun Technologies Ltd, Lagos, Nigeria.
+          </a>
+          . Klassrun Technologies Ltd, Lagos, Nigeria.
         </P>
       </article>
     </main>

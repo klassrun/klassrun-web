@@ -5,7 +5,7 @@ export default function manifest() {
     name: 'Klassrun Technologies Ltd',
     short_name: 'Klassrun',
     description:
-      'The AI-powered school operating system for Nigerian schools. Lesson notes, exam prep, schemes of work, results, and parent portal — built for the Nigerian curriculum.',
+      'The AI-powered school operating system for Nigerian schools. Lesson notes, exam prep, schemes of work, results, and parent portal, built for the Nigerian curriculum.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
