@@ -24,8 +24,6 @@ const PERSONAS = [
       { icon: ClipboardList, text: 'Keep attendance and behaviour records that follow each student.' },
       { icon: Users, text: 'One school account. Owners, teachers and bursars each get their own role.' },
     ],
-    quote: '[PLACEHOLDER - quote from a real school owner goes here]',
-    attribution: '[Name, School, Location]',
   },
   {
     id: 'teachers',
@@ -39,8 +37,6 @@ const PERSONAS = [
       { icon: Smartphone, text: 'Take attendance from your phone in seconds.' },
       { icon: RefreshCw, text: 'Reuse and edit everything you’ve made, any term, any session.' },
     ],
-    quote: '[PLACEHOLDER - quote from a real teacher goes here]',
-    attribution: '[Name, Role, School]',
   },
   {
     id: 'bursars',
@@ -54,8 +50,6 @@ const PERSONAS = [
       { icon: BarChart3, text: 'Spot outstanding balances per class before the term ends.' },
       { icon: CreditCard, text: 'Online payments through Paystack.', soon: true },
     ],
-    quote: '[PLACEHOLDER - quote from a real bursar goes here]',
-    attribution: '[Name, School]',
   },
 ]
 
@@ -107,17 +101,7 @@ export default function Personas() {
         ))}
       </div>
 
-      {/* Pull-quote between hairlines - PLACEHOLDER until a real quote exists */}
-      <div className="max-w-3xl mx-auto mt-12 md:mt-16">
-        <div className="border-t border-soft" />
-        <blockquote className="py-7 text-center">
-          <p className="text-base sm:text-lg italic text-foreground/80 leading-relaxed">
-            “{p.quote}”
-          </p>
-          <footer className="mt-3 text-sm text-muted-foreground">{p.attribution}</footer>
-        </blockquote>
-        <div className="border-t border-soft" />
-      </div>
+      {/* leads-personas-cleaned */}
     </Section>
   )
 }

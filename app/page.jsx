@@ -5,7 +5,10 @@ import Personas from '@/components/Personas'
 import WhyKlassrun from '@/components/WhyKlassrun'
 import Comparison from '@/components/Comparison'
 import Pricing from '@/components/Pricing'
-import Testimonials from '@/components/Testimonials'
+// leads-page-wired
+import FoundersNote from '@/components/FoundersNote'
+import FoundingSchools from '@/components/FoundingSchools'
+import LeadModal from '@/components/LeadModal'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 
@@ -19,9 +22,11 @@ export default function Home() {
       <WhyKlassrun />
       <Comparison />
       <Pricing />
-      <Testimonials />
+      <FoundersNote />
+      <FoundingSchools />
       <FAQ />
       <Footer />
+      <LeadModal />
     </main>
   )
 }
